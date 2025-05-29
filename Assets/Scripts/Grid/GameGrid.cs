@@ -7,10 +7,8 @@ namespace Grid
     public class GameGrid
     {
     
-        public GridData[,] grid;
-
+        private GridData[,] grid;
         private Vector3 originPosition = Vector3.zero;
-        
         private int minLength, maxLength, minWidth, maxWidth;
         private int length, width;
         private bool isready;
@@ -30,12 +28,8 @@ namespace Grid
             
             for (int x = 0; x < width; x++)
             {
-                Debug.Log("hi");
                 for (int y = 0; y < length; y++)
                 {
-                   
-                    Debug.Log(x + "-" + y);
-                    Debug.Log($"Grid[{x}, {y}] = ({x}, {y})");
                     grid[x, y] = new GridData(x, y);
                 }
             }
@@ -59,6 +53,12 @@ namespace Grid
             }
 
             return grid[arrayX, arrayY];
+        }
+        
+
+        public GridData[,] getGrid()
+        {
+            return grid;
         }
 
         public Vector2Int ReturnSize()

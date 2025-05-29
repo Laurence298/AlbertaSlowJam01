@@ -1,4 +1,5 @@
 using System;
+using Grid;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,10 +10,20 @@ public class Pointer : MonoBehaviour
     private LayerMask detectionLayer;
 
     private Vector3 lastPosition;
-
     
+    
+    public SOGridEvents gridEvents;
 
-    public Vector3 GetSelectedMapPosition()
+    private void Awake()
+    {
+    }
+
+    private void Update()
+    {
+        GetSelectedMapPosition();
+    }
+
+    public void GetSelectedMapPosition()
     {
         Vector2 screenPosition = Mouse.current.position.ReadValue();
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
@@ -25,10 +36,17 @@ public class Pointer : MonoBehaviour
         {
             lastPosition = hit.point;
         }
+        
+        gridEvents.OnMousePositionChanged(lastPosition);
 
-        return lastPosition;
     }
 
  
+}
+
+public enum PointerStates
+{
+    Navigation,
+    Placement
 }
 

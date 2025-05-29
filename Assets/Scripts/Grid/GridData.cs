@@ -7,7 +7,7 @@ namespace Grid
     {
         
             public Vector2Int position;
-            public tileType tileType;
+            public TileData tileData;
             public string name;
             public GridData(int x, int y)
             {
