@@ -10,7 +10,7 @@ namespace Grid
         private GridData[,] grid;
         private Vector3 originPosition = Vector3.zero;
         private int minLength, maxLength, minWidth, maxWidth;
-        private int length, width;
+        public int length, width;
         private bool isready;
 
         public GameGrid(Vector3 minParam,Vector3 maxparam, Vector3 origin)
@@ -43,10 +43,10 @@ namespace Grid
         {
             int arrayX = x ;
             int arrayY = y ;
-
+            
             // Optional: Safety check
-            if (arrayX < 0 || arrayX > grid.GetLength(0) ||
-                arrayY < 0 || arrayY > grid.GetLength(1))
+            if (arrayX < 0 || arrayX >width||
+                arrayY < 0 || arrayY > length)
             {
                 Debug.LogWarning($"Coordinates ({x},{y}) are out of bounds.");
                 return null;
