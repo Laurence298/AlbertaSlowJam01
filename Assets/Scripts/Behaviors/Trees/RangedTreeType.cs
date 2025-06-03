@@ -24,6 +24,8 @@ public class RangedTreeType : Abstract_Tree
         enemiesInRange = Physics2D.CircleCastAll(transform.position, attackRange, Vector2.zero).Select(enemyInRange => enemyInRange.transform.gameObject).Distinct<GameObject>().ToList();
         if (enemiesInRange.Count > 0 && Time.time > attackDelay)
         {
+            //Sorts the list according to how close the enemy is (closest ones get priority)
+            enemiesInRange.OrderByDescending(enemyInRange => Vector2.Distance(enemyInRange.gameObject.transform.position, transform.position)).ToList();
             attackDelay = Time.time + attackFrequency;
             Attack(enemiesInRange.First());
         }

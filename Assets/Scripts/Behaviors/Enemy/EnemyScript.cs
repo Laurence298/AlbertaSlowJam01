@@ -21,9 +21,14 @@ public class EnemyScript : Abstract_Enemy
 
     public override void Move(Vector2 pointA, Vector2 pointB)
     {
-        //targetPoint = (Vector2.Distance(transform.position, targetPoint) > .01) ? pointA : pointB;
-        transform.GetComponent<Rigidbody2D>().linearVelocity = (pointA - (Vector2)transform.position) * moveSpeed;
-        //transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+
+        if(Vector2.Distance(transform.position, targetPoint) <= 0.1f) 
+        {
+            targetPoint = (Vector2.Distance(transform.position, pointA) > Vector2.Distance(transform.position, pointB)) ? pointA : pointB;
+        }
+
+        transform.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        //transform.GetComponent<Rigidbody2D>().linearVelocity = (targetPoint - (Vector2)transform.position) * moveSpeed;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +40,7 @@ public class EnemyScript : Abstract_Enemy
     void Update()
     {
         Move(pointA, pointB);
+
         if (health < 0) 
         {
             Death();
