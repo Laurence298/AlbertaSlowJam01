@@ -1,10 +1,20 @@
 ﻿using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace Grid.Tests
 {
-    public class UnitList : MonoBehaviour
+    [CreateAssetMenu(fileName = "New Unit List", menuName = "Unit List")]
+    public class UnitList : ScriptableObject
     {
-        public List<GameObject> units = new List<GameObject>();
+        [SerializedDictionary("unity type","Unit")]
+        public SerializedDictionary<UnitType,UnitData> units;
+    }
+
+    [System.Serializable]
+    public class UnitData
+    {
+        public GameObject unit;
+        public TileData tileData;
     }
 }

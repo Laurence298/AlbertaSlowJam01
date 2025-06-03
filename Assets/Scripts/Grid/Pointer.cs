@@ -15,16 +15,22 @@ public class Pointer : MonoBehaviour
     private Vector3 lastPosition;
     
     public InputAction ClickAction;
+    
+    
     public PointerStates PointerState; 
     
     public SOGridEvents gridEvents;
 
-    public UnitList avaliableUnits;
+    // pointer things
+    public UnitType avaliableUnits;
     public TileData Greenery;
+
+
+    private bool isHoldingInput;
     private void Awake()
     {
         ClickAction.Enable();
-        ClickAction.performed += ClickActionOnperformed;
+        ClickAction.started += ClickActionOnperformed;
     }
 
     private void Start()
@@ -38,11 +44,11 @@ public class Pointer : MonoBehaviour
         {
             case PointerStates.Navigation:
                 break;
-            case PointerStates.TreePlacement:
-                GridManager.Instance.AssignUnit(avaliableUnits.units[0]);
+            case PointerStates.UnitPlacement:
+                GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
                 break;
-            case PointerStates.Naturing:
-                GridManager.Instance.PaintTile(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
+            case PointerStates.Greening:
+                GridManager.Instance.PlaceTileAtPointer(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -52,6 +58,9 @@ public class Pointer : MonoBehaviour
     private void Update()
     {
         GetSelectedMapPosition();
+        
+        
+        
     }
 
     public void GetSelectedMapPosition()
@@ -78,7 +87,7 @@ public class Pointer : MonoBehaviour
 public enum PointerStates
 {
     Navigation,
-    TreePlacement,
-    Naturing
+    UnitPlacement,
+    Greening
 }
 
