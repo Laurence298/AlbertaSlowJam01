@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AYellowpaper.SerializedCollections;
+using Grid.Tests;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -11,31 +13,56 @@ namespace Grid
     [RequireComponent(typeof(Tilemap))]
     public class GridManager : MonoBehaviour
     {
-        
+        // new updates
         public static GridManager Instance;
         
+        // creats unitys
+        public TileFactory tileFactory;
+        public UnitFactory unitFactory;
+        
+        // the game grid
         Tilemap tilemap;
         TilemapCollider2D collider;
-        
         public GameGrid gameGrid;
-        public GridData gridDatashow;
 
-        public List<TileData> tileDatas = new List<TileData>();
-        private Dictionary<TileBase, TileData> dataFromTiles;
+        // tile dictionaru containes thier data
+        private SerializedDictionary<TileBase, TileData> tileTypeMap;
+        public List<TileData> listTileData;
+        
+        // unit dictionary
+        public UnitList unitList;
+
+        // scriptable object
         public SOGridEvents gridEvents;
 
-        public List<GridData> enemySpawner;
-        public GridData Base;
-        public List<GridData> path;
+        
+        
+        // current grid
+      [SerializeField]  private GridData gridDatashow;
+      
+      
+      
+        // enemys to be worked on
 
+        public List<GridData> enemySpawner;
+
+        // pathfinding
+        public List<GridData> path;
+        public GridData Base;
 
         private const int MoveStraightCost = 10;
         private const int MoveDiagnolCost = 20;
+
+
         
-        public TileBase highlightTile;
+      
+        
+        
+
+     
+   
 
         private Vector3Int gridposition;
-        public Vector3 rawPointerposition;
         private void Awake()
         {
             if(Instance == null)
@@ -47,6 +74,21 @@ namespace Grid
             gridEvents.OnMousPointerPositionChanged += GridEventsOnOnMousPointerPositionChanged;
             gridEvents.OnpointerTypeChanged += GridEventsOnOnpointerTypeChanged;
         }
+        private void Start()
+        {
+            tilemap = GetComponent<Tilemap>();
+            collider = GetComponent<TilemapCollider2D>();
+            enemySpawner = new List<GridData>();
+            
+            // set up the grid
+            gameGrid = new GameGrid(collider.bounds.max, collider.bounds.min,transform.position);
+            
+            // setup the grid data
+            AssignGridData();
+            
+            tileFactory = new TileFactory(tilemap,gameGrid);
+            unitFactory = new UnitFactory(unitList, gameGrid,tilemap);
+        }
         private void GridEventsOnOnpointerTypeChanged(PointerStates pointerType)
         {
             
@@ -56,49 +98,23 @@ namespace Grid
             if(!gameGrid.IsGridReady())
                 return;
             
-            rawPointerposition = position;
             gridposition = tilemap.WorldToCell(position);
             gridDatashow = gameGrid.returnGrid(gridposition.x, gridposition.y);
         }
-        private void Start()
-        {
-            tilemap = GetComponent<Tilemap>();
-            collider = GetComponent<TilemapCollider2D>();
-            enemySpawner = new List<GridData>();
-            SetUpGrid();
-            AssignGridData();
-            /**
-            path = FindPath(enemySpawner[0], Base);
+     
 
-            if (path != null)
-            {
-                Debug.Log(path.Count);
-                foreach (GridData data in path)
-                {
-                    tilemap.SetTile(data.position, highlightTile);
-                }
-            }
-            **/
-        }
-        public void SetUpGrid()
-        {
-            gameGrid = new GameGrid(collider.bounds.max, collider.bounds.min,transform.position);
-        }
         public void AssignGridData()
         {
-            dataFromTiles = new Dictionary<TileBase, TileData>();
-            
-            
+            tileTypeMap = new SerializedDictionary<TileBase, TileData>();
             // store the tile and its data in a dictionary for a database
-            foreach (var tileData in tileDatas)
+            foreach (var tileData in listTileData)
             {
                 foreach (var tile in tileData.tiles)
                 {
-                    dataFromTiles.Add(tile, tileData);
+                    tileTypeMap.Add(tile, tileData);
                 }
             }
-            
-            // assign each tile in the grid itsdata
+            // assign each tile in the grid its data
             for (int x = 0; x < gameGrid.width; x++) // Width
             {
                 for (int y = 0; y <  gameGrid.length; y++) // Length
@@ -106,14 +122,13 @@ namespace Grid
                     TileBase tile = tilemap.GetTile(new Vector3Int(x, y, 0));
                     GridData currentData =  gameGrid.returnGrid(x, y);
                    
-                    currentData.tileData = dataFromTiles[tile];
+                    currentData.tileData = tileTypeMap[tile];
                     currentData.name = tile.name;
                     if (currentData.tileData.tileType == tileType.EnemySpawner)
                     {
                         // store the enemy
                         enemySpawner.Add(currentData);
                     }
-
                     if (currentData.tileData.tileType == tileType.Tower)
                     {
                         Base = currentData;
@@ -123,19 +138,15 @@ namespace Grid
 
          
         }
-        public void PaintTile(TileBase tile)
+        public void PlaceTileAtPointer(TileBase tile)
         {
-            GridData currentGridPoint = gameGrid.returnGrid(gridposition.x, gridposition.y);
-
-      
-            tilemap.SetTile(gridposition, tile);
+            tileFactory.PaintTile(gridposition, tile, tileTypeMap);
         }
-        public void AssignUnit(GameObject unit)
-        { 
-            GridData currentGridPoint = gameGrid.returnGrid(gridposition.x, gridposition.y);
 
-          
-            Instantiate(unit, tilemap.WorldToCell(rawPointerposition), Quaternion.identity);
+        public void PlaceUnitAtPointer(UnitType unitType)
+        {
+            Vector3 spawnPosition = tilemap.CellToWorld(gridposition);
+            unitFactory.SpawnUnit(unitType, spawnPosition);
         }
         public List<GridData> FindPath(GridData from, GridData to)
         {
