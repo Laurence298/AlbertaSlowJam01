@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AYellowpaper.SerializedCollections;
 using Grid.Tests;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -26,7 +25,7 @@ namespace Grid
         public GameGrid gameGrid;
 
         // tile dictionaru containes thier data
-        private SerializedDictionary<TileBase, TileData> tileTypeMap;
+        private Dictionary<TileBase, TileData> tileTypeMap;
         public List<TileData> listTileData;
         
         // unit dictionary
@@ -81,8 +80,8 @@ namespace Grid
             enemySpawner = new List<GridData>();
             
             // set up the grid
-            gameGrid = new GameGrid(collider.bounds.max, collider.bounds.min,transform.position);
-            
+            gameGrid = new GameGrid(10, 17,transform.position);
+            Debug.Log(collider.bounds.max + collider.bounds.min);
             // setup the grid data
             AssignGridData();
             
@@ -105,7 +104,7 @@ namespace Grid
 
         public void AssignGridData()
         {
-            tileTypeMap = new SerializedDictionary<TileBase, TileData>();
+            tileTypeMap = new Dictionary<TileBase, TileData>();
             // store the tile and its data in a dictionary for a database
             foreach (var tileData in listTileData)
             {
@@ -121,7 +120,7 @@ namespace Grid
                 {
                     TileBase tile = tilemap.GetTile(new Vector3Int(x, y, 0));
                     GridData currentData =  gameGrid.returnGrid(x, y);
-                   
+                   Debug.Log(x + " " + y + " " );
                     currentData.tileData = tileTypeMap[tile];
                     currentData.name = tile.name;
                     if (currentData.tileData.tileType == tileType.EnemySpawner)

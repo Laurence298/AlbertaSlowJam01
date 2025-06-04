@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9993cc85a901445eb0bf44f4af22d183, type: 3}
   m_Name: PlayerCore
   m_EditorClassIdentifier: 
-  tiles: []
-  tileType: 2
+  tiles:
+  - {fileID: 11400000, guid: 2841baa78333bf646975d8c596b33f4b, type: 2}
+  tileType: 4

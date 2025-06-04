@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9993cc85a901445eb0bf44f4af22d183, type: 3}
-  m_Name: EnemySpawner
+  m_Script: {fileID: 11500000, guid: 00e8ca6434574c44931d51047ae83017, type: 3}
+  m_Name: SOGridEvents
   m_EditorClassIdentifier: 
-  tiles:
-  - {fileID: 11400000, guid: 4c038d04767f80844a8bc072b4d89e96, type: 2}
-  tileType: 3

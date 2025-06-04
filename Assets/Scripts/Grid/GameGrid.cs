@@ -13,16 +13,13 @@ namespace Grid
         public int length, width;
         private bool isready;
 
-        public GameGrid(Vector3 minParam,Vector3 maxparam, Vector3 origin)
+        public GameGrid(int length,int  width, Vector3 origin)
         {
            isready = false;
-            this.minLength = (int)minParam.y;
-            this.maxLength = (int)maxparam.y;
-            this.minWidth = (int)minParam.x;
-            this.maxWidth =  (int)maxparam.x;
+            this.length = length;
+            this.width = width;
             
-            length = Mathf.Abs( ((maxLength - minLength)));
-            width =  Mathf.Abs((maxWidth - minWidth ));
+          
 
             grid = new GridData[width, length];
             
