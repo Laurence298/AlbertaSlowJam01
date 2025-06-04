@@ -8,16 +8,6 @@ public class BasicProjectile : MonoBehaviour
     public Vector2 targetPos;
     public float damage, projectileSpeed, projectileRange;
 
-    //Testing testing
-    public float valueTest;
-
-    private void Awake()
-    {
-        //NEED: change it so that it can dynamically reach targets
-        //targetPos = GameObject.Find("EnemyUnit").transform.position;
-
-        //NEED: rotate the bullet to face the Target
-    }
 
     private void Start()
     {
@@ -29,7 +19,6 @@ public class BasicProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        valueTest = Vector2.Distance(transform.position, targetPos);
         gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, targetPos, projectileSpeed * Time.deltaTime);
 
         //NEED: Destroy the object even if it doesn't hit anything, maybe just when it goes outside the range?
