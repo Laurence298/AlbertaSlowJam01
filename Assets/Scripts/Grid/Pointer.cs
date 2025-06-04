@@ -15,7 +15,8 @@ public class Pointer : MonoBehaviour
     private Vector3 lastPosition;
     
     public InputAction ClickAction;
-    
+    public InputAction ActionSwitch;
+
     
     public PointerStates PointerState; 
     
