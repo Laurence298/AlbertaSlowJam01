@@ -37,6 +37,7 @@ namespace Grid
 
     public enum UnitType
     {
-        BaseTree
+        BaseTree,
+        LongRange,
     }
 }
