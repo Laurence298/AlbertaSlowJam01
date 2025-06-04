@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: df93cf96686755a43b734302d2c13aa5
+guid: f848ff2abec9bb64dbc3bf3a3e24cdc4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -89603259143967676
-    second: oaktreesprite_0
-  - first:
-      213: 9169859968684236269
-    second: oaktreesprite_1
-  - first:
-      213: -8799670386606175875
-    second: oaktreesprite_2
+      213: 8012800841339667951
+    second: TreeDraft 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,56 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: oaktreesprite_0
+      name: TreeDraft 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15436e03b5c6f7144b27df588afdc623
-      internalID: 23063002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oaktreesprite_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb13e3955f36e5e4bb8af4f9528549ad
-      internalID: -992168556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: oaktreesprite_2
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 48
+        width: 44
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,10 +126,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 912e2caa33eb2d24db2fe712cd8ef8ef
-      internalID: -226688069
+      spriteID: fe5800c59ef233f60800000000000000
+      internalID: 8012800841339667951
       vertices: []
       indices: 
       edges: []
@@ -188,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 82d026a0b77eea44dac3ef25d8a5c41a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -196,13 +146,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":3.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      oaktreesprite_0: 23063002
-      oaktreesprite_1: -992168556
-      oaktreesprite_2: -226688069
+      TreeDraft 1_0: 8012800841339667951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

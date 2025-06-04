@@ -74,10 +74,10 @@ namespace Grid
 
     public enum tileType
     {
-        Empty,
-        PlantAble,
-        Tower,
-        EemyPath,
-        EnemySpawner
+        Barrenland,
+        FertileLand,
+        EnemyPath,
+        EnemySpawner,
+        PlayerCore
     }
 }

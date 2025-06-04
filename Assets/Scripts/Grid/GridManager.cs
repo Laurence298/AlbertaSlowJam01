@@ -129,7 +129,7 @@ namespace Grid
                         // store the enemy
                         enemySpawner.Add(currentData);
                     }
-                    if (currentData.tileData.tileType == tileType.Tower)
+                    if (currentData.tileData.tileType == tileType.PlayerCore)
                     {
                         Base = currentData;
                     }
@@ -187,7 +187,7 @@ namespace Grid
                 {
                     if(closedPath.Contains(nieghbor) ) continue;
 
-                    if (nieghbor.tileData.tileType == tileType.PlantAble || nieghbor.tileData.tileType == tileType.Empty)
+                    if (nieghbor.tileData.tileType == tileType.FertileLand || nieghbor.tileData.tileType == tileType.Barrenland)
                     {
                         closedPath.Add(nieghbor);
                         continue;

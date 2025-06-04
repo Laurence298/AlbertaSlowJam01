@@ -18,7 +18,7 @@ namespace Grid
 
         public void PaintTile(Vector3Int position, TileBase tile,SerializedDictionary<TileBase, TileData> tileTypeMap)
         {
-            if(  grid.returnGrid(position.x, position.y).tileData.tileType != tileType.Empty)
+            if(  grid.returnGrid(position.x, position.y).tileData.tileType != tileType.Barrenland)
                 return;
             
             tilemap.SetTile(position, tile);

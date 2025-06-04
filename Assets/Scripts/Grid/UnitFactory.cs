@@ -25,7 +25,7 @@ namespace Grid
             
             Vector3Int tilePosition = tilemap.WorldToCell(worldPosition);
             
-            if(  gameGrid.returnGrid(tilePosition.x, tilePosition.y).tileData.tileType != tileType.PlantAble)
+            if(  gameGrid.returnGrid(tilePosition.x, tilePosition.y).tileData.tileType != tileType.FertileLand)
                 return null;
          
             // update what kind of tile it is

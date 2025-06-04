@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9993cc85a901445eb0bf44f4af22d183, type: 3}
+  m_Name: BarrenLand
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 3cefd5c258be5de47b43483cea98202f, type: 2}
+  - {fileID: 11400000, guid: e2e863cda564024449a9f4d0cf23841c, type: 2}
+  - {fileID: 11400000, guid: de8bcc39869b0384589c47450146408b, type: 2}
+  - {fileID: 11400000, guid: c07c4410abad7984f9f42179b56004eb, type: 2}
+  - {fileID: 11400000, guid: 21c0dd3a0f1b65045b8fcce11ba216c2, type: 2}
+  - {fileID: 11400000, guid: 1cfa3dc3fb5bff8419790da454304c0c, type: 2}
+  - {fileID: 11400000, guid: 55e68ffb93793e24f9f10ce816fb4ccf, type: 2}
+  - {fileID: 11400000, guid: 09de9f22cb2f8dc4880dd054a3bafa4d, type: 2}
+  - {fileID: 11400000, guid: efcabb6c4b75cce4aae27432a8c77362, type: 2}
+  tileType: 0
