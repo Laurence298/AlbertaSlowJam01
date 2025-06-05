@@ -78,7 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 4
+    mosaicPadding: 0
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -93,7 +93,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 4
+    mosaicPadding: 0
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638847286102192299
+  platformSettingsDirtyTick: 638847351451365489
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -149,7 +149,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 2}
   spriteSheetImportData:
-  - name: grass_top_l
+  - name: grass_sprite_r1c1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -157,11 +157,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 338
+      x: 0
+      y: 336
       width: 48
       height: 48
-    spriteID: a9ac0eaf4b966894c936dbcffce42e4e
+    spriteID: b2519daa031a485428c45bb7bfcea5d3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,7 +170,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_top_c
+  - name: grass_sprite_r1c2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -178,11 +178,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 52
-      y: 338
+      x: 48
+      y: 336
       width: 48
       height: 48
-    spriteID: fda2d02dde17eb145b9f989b3e09d8b5
+    spriteID: ee4e682dcc7bb1743bd76e38b22496d5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,7 +191,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_top_
+  - name: grass_sprite_r1c3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -199,11 +199,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 100
-      y: 338
+      x: 96
+      y: 336
       width: 48
       height: 48
-    spriteID: c8020ee5eb9d62a4cbea20307e72cbc8
+    spriteID: b2598ffc63033634fa5eb5f9a9370e00
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_mid_l
+  - name: grass_sprite_r2c1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -220,11 +220,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 290
+      x: 0
+      y: 288
       width: 48
       height: 48
-    spriteID: c347c508580468c49b56eec290fdd724
+    spriteID: 3bc0dda38c195f842bad3293898c36b1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -233,7 +233,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_mid_c_1
+  - name: grass_sprite_r2c2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -241,11 +241,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 52
-      y: 290
+      x: 48
+      y: 289
       width: 48
       height: 48
-    spriteID: fea4cce38b9abd9489cf31c5242f6dd2
+    spriteID: 0d7fd3b48fe563649bccf684bfced2c0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -254,7 +254,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_mid_r
+  - name: grass_sprite_r2c3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -262,11 +262,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 100
-      y: 290
+      x: 96
+      y: 288
       width: 48
       height: 48
-    spriteID: 649cbc785d7ee8e458198cb6c45f602a
+    spriteID: 5a067689ec6316645bb1133fdaefeb64
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -275,7 +275,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_bot_l
+  - name: grass_sprite_r3c1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -283,11 +283,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 242
+      x: 0
+      y: 240
       width: 48
       height: 48
-    spriteID: 7bd63a7b81b60b14aa9c3de50d2fc573
+    spriteID: c84afdc8d3c78674c9d7a7a9c5daf8e5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -296,7 +296,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_bot_c
+  - name: grass_sprite_r3c2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -304,11 +304,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 52
-      y: 242
+      x: 48
+      y: 240
       width: 48
       height: 48
-    spriteID: 5e2bfdebca208234694db4ae20b52739
+    spriteID: 2000d21295109724fb547339200ee1c1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -317,7 +317,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_bot_R
+  - name: grass_sprite_r3c3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -325,11 +325,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 100
-      y: 242
+      x: 96
+      y: 240
       width: 48
       height: 48
-    spriteID: c0be870f138e28b49b4aa247f57db14f
+    spriteID: cc063df0f49607b4e9438ae69378aa96
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,7 +338,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_indi_1
+  - name: i1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -346,11 +346,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 146
+      x: 0
+      y: 144
       width: 48
       height: 48
-    spriteID: d8866f399ecad7e4da7f97f3fb606561
+    spriteID: 5ed727b59c3c38e4685b780a3bc0cf03
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -359,7 +359,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_indi_2
+  - name: i2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -367,11 +367,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 52
-      y: 146
+      x: 48
+      y: 144
       width: 48
       height: 48
-    spriteID: 40ece103ba7cdb445a2fd68584e4cde6
+    spriteID: e57e0fb9edc6c1e44968e34c0c065125
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -380,7 +380,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_indi_3
+  - name: i3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -388,11 +388,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 100
-      y: 146
+      x: 95
+      y: 144
       width: 48
       height: 48
-    spriteID: 57faec2d3650b014d8886563ef3419c1
+    spriteID: 704da55e53eca814f903be0d93d0e69c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -401,7 +401,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_connected_top
+  - name: ct
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -409,11 +409,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 50
+      x: 0
+      y: 48
       width: 48
       height: 48
-    spriteID: 38e5eb7d61e0da343b6ca36db3e30c81
+    spriteID: 29022ee65df600841b6a5c09e2478264
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -422,7 +422,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_connected_left
+  - name: cr
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -430,11 +430,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 52
-      y: 50
+      x: 48
+      y: 48
       width: 48
       height: 48
-    spriteID: 0e77b1e744557414bb3b2916c0ebc231
+    spriteID: 4dc6d87f4f678e24184ab2dbc10249c2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -443,7 +443,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_connected_right
+  - name: l
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -451,11 +451,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 100
-      y: 50
+      x: 96
+      y: 48
       width: 48
       height: 48
-    spriteID: 3509cbf8127f93e4e9e0ef82dc1a128c
+    spriteID: 521a8b391d775904d8aedee26058c971
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -464,7 +464,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: grass_connected_bot
+  - name: cb
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -472,11 +472,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2
+      x: 0
+      y: 0
       width: 48
       height: 48
-    spriteID: 2fa7ca8815084c54f81aef0ada9d080b
+    spriteID: eeedf16a28ca73944975ec9f5c57865e
     spriteBone: []
     spriteOutline: []
     vertices: []

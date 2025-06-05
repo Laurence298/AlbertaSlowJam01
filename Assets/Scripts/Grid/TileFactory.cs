@@ -17,12 +17,12 @@ namespace Grid
             this.tilemap = tilemap;
         }
 
-        public void PaintTile(Vector3Int position, TileBase tile,Dictionary<TileBase, TileData> tileTypeMap)
+        public void PaintTile(Vector3Int position,Dictionary<TileBase, TileData> tileTypeMap, RuleTile ruleTile)
         {
             if(  grid.returnGrid(position.x, position.y).tileData.tileType != tileType.Barrenland)
                 return;
             
-            tilemap.SetTile(position, tile);
+            tilemap.SetTile(position, ruleTile);
             TileBase newTile = tilemap.GetTile(position);
             grid.returnGrid(position.x, position.y).tileData =tileTypeMap[newTile]; ;
            

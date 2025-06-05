@@ -27,6 +27,7 @@ namespace Grid
         // tile dictionaru containes thier data
         private Dictionary<TileBase, TileData> tileTypeMap;
         public List<TileData> listTileData;
+        public RuleTile ruleTile;
         
         // unit dictionary
         public UnitList unitList;
@@ -137,9 +138,9 @@ namespace Grid
 
          
         }
-        public void PlaceTileAtPointer(TileBase tile)
+        public void PlaceTileAtPointer()
         {
-            tileFactory.PaintTile(gridposition, tile, tileTypeMap);
+            tileFactory.PaintTile(gridposition, tileTypeMap,ruleTile);
         }
 
         public void PlaceUnitAtPointer(UnitType unitType)

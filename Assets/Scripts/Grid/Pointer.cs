@@ -79,7 +79,7 @@ public class Pointer : MonoBehaviour
                 break;
             case PointerStates.Greening:
                 if(!OverUi())
-                    GridManager.Instance.PlaceTileAtPointer(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
+                    GridManager.Instance.PlaceTileAtPointer( );
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
