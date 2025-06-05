@@ -13,11 +13,13 @@ namespace GameFlow
         public int CurrentWaves;
         
         [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
+        public List<EnemySpawner> EnemySpawners;
 
 
         private void Start()
         {
             CurrentWaves = 0;
+            EnemySpawners = (transform.GetComponentsInChildren<EnemySpawner>().ToList());
             soUIEvents.RaiseWaveChanged(CurrentWaves, MaxWaves);
         }
 
