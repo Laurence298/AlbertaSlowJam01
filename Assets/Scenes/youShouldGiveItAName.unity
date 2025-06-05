@@ -411,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -1.0003777}
+  m_AnchoredPosition: {x: -336, y: 195}
   m_SizeDelta: {x: 325, y: 56.249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156000896
@@ -427,9 +427,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1156000897}
-  currentHealth: {fileID: 0}
-  maxHealth: 0
-  minHealth: 0
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.9245283, g: 0.112687506, b: 0.02180491, a: 1}
+    key1: {r: 0.9606786, g: 0.9811321, b: 0.013883919, a: 1}
+    key2: {r: 0.06732824, g: 0.8396226, b: 0.080378406, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 17540
+    ctime1: 39321
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1847531511}
 --- !u!114 &1156000897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +505,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -507,7 +535,7 @@ Transform:
   m_GameObject: {fileID: 1350418354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -1.12, z: -10}
+  m_LocalPosition: {x: 518, y: 170, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -525,6 +553,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae268a5c5b109418c4ca9a8e9131ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthbar: {fileID: 1156000896}
 --- !u!1 &1847531509
 GameObject:
   m_ObjectHideFlags: 0
