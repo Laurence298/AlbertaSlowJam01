@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class RangedTreeType : Abstract_Tree
     [SerializeField] GameObject bulletType;
     public GameObject projectile;
     public List<RaycastHit2D> enemyDetect;
+    [SerializeField] LayerMask targetLayers;
 
     //public GameObject targetObj;
 
@@ -21,7 +23,10 @@ public class RangedTreeType : Abstract_Tree
 
     private void Update()
     {
-        enemiesInRange = Physics2D.CircleCastAll(transform.position, attackRange, Vector2.zero).Select(enemyInRange => enemyInRange.transform.gameObject).Distinct<GameObject>().ToList();
+
+        enemiesInRange = Physics2D.CircleCastAll(transform.position, attackRange, Vector2.zero, 0, targetLayers).Select(enemyInRange => enemyInRange.transform.gameObject).Distinct<GameObject>().ToList();
+        
+
         if (enemiesInRange.Count > 0 && Time.time > attackDelay)
         {
             //Sorts the list according to how close the enemy is (closest ones get priority)
@@ -31,7 +36,6 @@ public class RangedTreeType : Abstract_Tree
         }
 
     }
-
 
 
     public override void Attack(GameObject targetObj)

@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.09879969, g: 0.6226415, b: 0, a: 1}
+  m_Sprite: {fileID: -226688069, guid: df93cf96686755a43b734302d2c13aa5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,12 +102,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 6
-  attackFrequency: 0.15
+  attackFrequency: 0.8
   attackDelay: 0
-  attackDmg: 15
+  attackDmg: 10
   projectileSpeed: 40
   bulletType: {fileID: 6182925658260525055, guid: a405d75e9ce35334fb2f214f7c50f3d8, type: 3}
   projectile: {fileID: 0}
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 8
   enemiesInRange: []
 --- !u!61 &2214361903534171952
 BoxCollider2D:
