@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - EnemiesNEntities
   - Water
   - UI
   - Tile
-  - 
+  - PlayerHealth
   - 
   - 
   - 
