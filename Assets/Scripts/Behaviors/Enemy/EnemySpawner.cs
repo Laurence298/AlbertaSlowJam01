@@ -7,8 +7,10 @@ public class EnemySpawner : MonoBehaviour
 {
     //WIP
     GameObject enemy;
-    public List<GameObject> enemyList;
     public float spawnFreq, timeDelay;
+    public int maxSpawnNum, spawnedCount;
+    public List<GameObject> enemySpawnList, spawnedEnemies;
+
 
     public enum EnemyType 
     {
@@ -31,12 +33,29 @@ public class EnemySpawner : MonoBehaviour
             timeDelay = Time.time + spawnFreq;
             EnemySpawn();
         }
+
+
+        ClearSpawnedList();
+
     }
 
     private void EnemySpawn() 
     {
-        enemy = GameObject.Instantiate(enemyList.First(), transform.position, transform.rotation);
-        enemy.GetComponent<EnemyScript>().pointA = new Vector2(-4f, -3.5f);
-        enemy.GetComponent<EnemyScript>().pointB = new Vector2(5f, -3.5f);
+
+        if (spawnedEnemies.Count < maxSpawnNum)
+        {
+            enemy = GameObject.Instantiate(enemySpawnList.First(), transform.position, transform.rotation);
+            enemy.GetComponent<EnemyScript>().pointA = new Vector2(-4f, -3.5f);
+            enemy.GetComponent<EnemyScript>().pointB = new Vector2(5f, -3.5f);
+            enemy.gameObject.name = "Badguy #" + spawnedCount;
+            spawnedCount++;
+            spawnedEnemies.Add(enemy);
+        }
+    }
+
+    private void ClearSpawnedList() 
+    {
+        spawnedEnemies.RemoveAll(e => e.gameObject == null);
+
     }
 }
