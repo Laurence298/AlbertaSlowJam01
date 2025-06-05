@@ -9,6 +9,7 @@ namespace Grid
             public Vector3Int position;
             public TileData tileData;
             public string name;
+            public bool UnitPlanted;
 
             public int gCost;
             public int hCost;

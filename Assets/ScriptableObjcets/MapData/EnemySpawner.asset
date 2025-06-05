@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemySpawner
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 645602910feba7940864216e6354e677, type: 2}
-  tileType: 4
+  - {fileID: 11400000, guid: 4c038d04767f80844a8bc072b4d89e96, type: 2}
+  tileType: 3

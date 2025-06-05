@@ -25,18 +25,22 @@ namespace Grid
             
             Vector3Int tilePosition = tilemap.WorldToCell(worldPosition);
             
-            if(  gameGrid.returnGrid(tilePosition.x, tilePosition.y).tileData.tileType != tileType.PlantAble)
+            if(  gameGrid.returnGrid(tilePosition.x, tilePosition.y).tileData.tileType != tileType.FertileLand   )
                 return null;
          
+            if(gameGrid.returnGrid(tilePosition.x, tilePosition.y).UnitPlanted)
+                return null;
             // update what kind of tile it is
-            gameGrid.returnGrid(tilePosition.x, tilePosition.y).tileData = unitList.units[type].tileData;
+            gameGrid.returnGrid(tilePosition.x, tilePosition.y).UnitPlanted = true;
             
-            return GameObject.Instantiate(unitList.units[type].unit, new Vector3(worldPosition.x +0.5f, worldPosition.y +0.5f,0), Quaternion.identity);
+            
+            return GameObject.Instantiate(unitList.units[type].unit, new Vector3(worldPosition.x + .75f , worldPosition.y + .5f ,0), Quaternion.identity);
         }
     }
 
     public enum UnitType
     {
-        BaseTree
+        BaseTree,
+        LongRange,
     }
 }

@@ -66,10 +66,20 @@ MonoBehaviour:
       m_Action: Click
       m_Flags: 0
     m_Flags: 0
+  ActionSwitch:
+    m_Name: Action Switch
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7f3eaa86-0a3d-4ccc-b59c-36f7e252df2e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   PointerState: 0
-  gridEvents: {fileID: 11400000, guid: 50f708bc5e027624492b42c31b27b53a, type: 2}
+  gridEvents: {fileID: 11400000, guid: bd3c183e0c0249c48a76e797d4aa6adc, type: 2}
   avaliableUnits: 0
   Greenery: {fileID: 11400000, guid: c37662b630ebf3a4aa6d050af7762683, type: 2}
+  soUIEvents: {fileID: 11400000, guid: 6ca8978e79d32d44a8d72b80100d0cd3, type: 2}
 --- !u!1 &9036798333541669505
 GameObject:
   m_ObjectHideFlags: 0
