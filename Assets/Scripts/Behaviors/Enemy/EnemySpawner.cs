@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxSpawnNum, spawnedCount;
     public List<GameObject> enemySpawnList, spawnedEnemies;
 
+
     public enum EnemyType 
     {
         basic,
@@ -33,11 +34,14 @@ public class EnemySpawner : MonoBehaviour
             EnemySpawn();
         }
 
+
         ClearSpawnedList();
+
     }
 
     private void EnemySpawn() 
     {
+
         if (spawnedEnemies.Count < maxSpawnNum)
         {
             enemy = GameObject.Instantiate(enemySpawnList.First(), transform.position, transform.rotation);
@@ -52,5 +56,6 @@ public class EnemySpawner : MonoBehaviour
     private void ClearSpawnedList() 
     {
         spawnedEnemies.RemoveAll(e => e.gameObject == null);
+
     }
 }
