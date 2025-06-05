@@ -1,8 +1,11 @@
 using System;
 using Grid;
 using Grid.Tests;
+using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 using TileData = Grid.TileData;
@@ -24,14 +27,38 @@ public class Pointer : MonoBehaviour
 
     // pointer things
     public UnitType avaliableUnits;
+    
+    // green tile
     public TileData Greenery;
 
 
+    
+    [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
     private bool isHoldingInput;
     private void Awake()
     {
         ClickAction.Enable();
         ClickAction.started += ClickActionOnperformed;
+        soUIEvents.OnClickUnitUI += SoUIEventsOnOnClickUnitSoUI;
+        soUIEvents.OnPaintSelectedUI += SoUIEventsOnOnPaintSelectedSoUI;
+        
+    }
+
+    private void SoUIEventsOnOnPaintSelectedSoUI()
+    {
+        PointerState = PointerStates.Greening;
+        
+    }
+
+    private void SoUIEventsOnOnClickUnitSoUI(UnitType arg0)
+    {
+        avaliableUnits = arg0;
+        PointerState = PointerStates.UnitPlacement;
+    }
+
+    public bool OverUi()
+    {
+       return EventSystem.current.IsPointerOverGameObject();
     }
 
     private void Start()
@@ -46,10 +73,13 @@ public class Pointer : MonoBehaviour
             case PointerStates.Navigation:
                 break;
             case PointerStates.UnitPlacement:
+                
                 GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
+                PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:
-                GridManager.Instance.PlaceTileAtPointer(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
+                if(!OverUi())
+                    GridManager.Instance.PlaceTileAtPointer(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -59,9 +89,6 @@ public class Pointer : MonoBehaviour
     private void Update()
     {
         GetSelectedMapPosition();
-        
-        
-        
     }
 
     public void GetSelectedMapPosition()

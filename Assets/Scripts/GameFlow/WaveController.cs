@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GameFlow
 {
@@ -10,12 +12,13 @@ namespace GameFlow
         public int MaxWaves;
         public int CurrentWaves;
         
-        public List<EnemySpawners> spawners;
+        [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
 
 
         private void Start()
         {
-            spawners = transform.GetComponentsInChildren<EnemySpawners>().ToList();
+            CurrentWaves = 0;
+            soUIEvents.RaiseWaveChanged(CurrentWaves, MaxWaves);
         }
 
         public void StartWave()
@@ -31,15 +34,17 @@ namespace GameFlow
         public void NextWave()
         {
             CurrentWaves++;
+            soUIEvents.RaiseWaveChanged(CurrentWaves, MaxWaves);
+
         }
 
-        public bool CheckForEnemies()
+        public bool AreEnemiesAlive()
         {
             return false;
         }
         public bool LevelCompleted()
         {
-            if (CurrentWaves > MaxWaves && !CheckForEnemies())
+            if (CurrentWaves >= MaxWaves && !AreEnemiesAlive())
             {
                 return true;
             }

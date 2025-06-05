@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using GameFlow;
+using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
-    public float preapingCountdown;
-    public float countdown;
+     public float timeUntilRoundStart;
+    private float countdown;
     
     
     public WaveController waveController;
@@ -14,15 +16,25 @@ public class GameController : MonoBehaviour
     
     public GameState gameState;
     public Coroutine gameCoroutine;
+    public SoUIEvents uiEvents;
 
     private void Start()
     {
         gameState = GameState.Preaping;
-        countdown = preapingCountdown;
-
+        countdown = timeUntilRoundStart;
+        uiEvents.RaiseTimerChanged(countdown);
+        uiEvents.OnStartPressed += UiEventsOnOnStartPressed;
         gameCoroutine = StartCoroutine(Preaping());
     }
 
+    private void UiEventsOnOnStartPressed()
+    {
+        if (gameState == GameState.Preaping)
+        {
+            countdown = 0;
+            uiEvents.RaiseTimerChanged(countdown);
+        }
+    }
 
 
     public IEnumerator Preaping()
@@ -32,6 +44,7 @@ public class GameController : MonoBehaviour
         while (countdown > 0)
         {
             countdown -= Time.deltaTime;
+            uiEvents.RaiseTimerChanged(countdown);
             yield return null;
         }
         
@@ -43,8 +56,8 @@ public class GameController : MonoBehaviour
     {
         gameState = GameState.Defending;
 
-        yield return new WaitUntil(() => !waveController.CheckForEnemies());
-        countdown = preapingCountdown;
+        yield return new WaitUntil(() => !waveController.AreEnemiesAlive());
+        countdown = timeUntilRoundStart;
         waveController.NextWave();
         
         if(!waveController.LevelCompleted())
