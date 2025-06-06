@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnFreq, timeDelay;
     public int maxSpawnNum, spawnedCount;
     public List<GameObject> enemySpawnList, spawnedEnemies;
+    public SplineContainer spline;
 
 
     public enum EnemyType 
@@ -22,7 +25,6 @@ public class EnemySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -45,8 +47,9 @@ public class EnemySpawner : MonoBehaviour
         if (spawnedEnemies.Count < maxSpawnNum)
         {
             enemy = GameObject.Instantiate(enemySpawnList.First(), transform.position, transform.rotation);
-            enemy.GetComponent<EnemyScript>().pointA = new Vector2(-4f, -3.5f);
-            enemy.GetComponent<EnemyScript>().pointB = new Vector2(5f, -3.5f);
+            enemy.gameObject.GetComponent<SplineAnimate>().Container = spline;
+            enemy.gameObject.GetComponent<SplineAnimate>().MaxSpeed = enemy.GetComponent<EnemyScript>().moveSpeed;
+            enemy.gameObject.GetComponent<SplineAnimate>().Play();
             enemy.gameObject.name = "Badguy #" + spawnedCount;
             spawnedCount++;
             spawnedEnemies.Add(enemy);
