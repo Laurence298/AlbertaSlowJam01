@@ -15,4 +15,10 @@ public class ScoreController : MonoBehaviour
         CoinScorer += amount;
         OnCoinsChanged.Invoke();
     }
+
+    public void SubractScore(int amount)
+    {
+        CoinScorer -= amount;
+        OnCoinsChanged.Invoke();
+    }
 }
