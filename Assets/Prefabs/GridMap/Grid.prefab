@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4747300855493886159}
   - component: {fileID: 2366416701135918658}
   - component: {fileID: 7100911106006674657}
-  - component: {fileID: 5652723272580595287}
   - component: {fileID: 5549238065717766075}
+  - component: {fileID: 4167482784233962278}
   m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
@@ -47,8 +47,8 @@ Tilemap:
   - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 16
+      m_TileIndex: 12
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -58,7 +58,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -218,7 +218,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1754,7 +1754,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 2841baa78333bf646975d8c596b33f4b, type: 2}
-  - m_RefCount: 114
+  - m_RefCount: 113
     m_Data: {fileID: 11400000, guid: bf269fef22130bf4da998d964cb2e272, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 4c038d04767f80844a8bc072b4d89e96, type: 2}
@@ -1770,7 +1770,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 5
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 9d3dc65f59812774c8d8b8b9cf53beaa, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -1805,17 +1805,17 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 110
+  - m_RefCount: 107
     m_Data: {fileID: -7392453117597905338, guid: 3df8c58c796652e4aba08046361b8d08, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
+    m_Data: {fileID: 652896834941624310, guid: 3df8c58c796652e4aba08046361b8d08, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 3855033141623077590, guid: 0616dc19501efa54fbf421ef215346c8, type: 3}
+  - m_RefCount: 2
     m_Data: {fileID: 2511756289854438665, guid: 3df8c58c796652e4aba08046361b8d08, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8913358629440256620, guid: 3df8c58c796652e4aba08046361b8d08, type: 3}
@@ -2073,7 +2073,64 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!19719996 &5652723272580595287
+--- !u!114 &5549238065717766075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386481638060603650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b937b01e7b4493b135a94abb076c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 4167482784233962278}
+  gameGrid:
+    length: 10
+    width: 17
+  listTileData:
+  - {fileID: 11400000, guid: 1cfb9b716bf6a5c41b86d78f64d339b9, type: 2}
+  - {fileID: 11400000, guid: f383eea9187349e489505fa979220eff, type: 2}
+  - {fileID: 11400000, guid: ffa2fc010b85d534aa34c2ade88b6a4c, type: 2}
+  - {fileID: 11400000, guid: 5f58f728ba40093429417d735cc67866, type: 2}
+  - {fileID: 11400000, guid: c3696b88b22f79044a86d0ec80c585c4, type: 2}
+  ruleTile: {fileID: 11400000, guid: 9d3dc65f59812774c8d8b8b9cf53beaa, type: 2}
+  unitList: {fileID: 11400000, guid: ef912bba33c11da4f9774288280f921e, type: 2}
+  gridEvents: {fileID: 11400000, guid: bd3c183e0c0249c48a76e797d4aa6adc, type: 2}
+  gridDatashow:
+    position: {x: 0, y: 0, z: 0}
+    tileData: {fileID: 11400000, guid: 1cfb9b716bf6a5c41b86d78f64d339b9, type: 2}
+    name: GrassRule
+    UnitPlanted: 0
+    gCost: 0
+    hCost: 0
+    fCost: 0
+  enemySpawner:
+  - position: {x: 0, y: 4, z: 0}
+    tileData: {fileID: 11400000, guid: 5f58f728ba40093429417d735cc67866, type: 2}
+    name: EnemySpawner
+    UnitPlanted: 0
+    gCost: 0
+    hCost: 0
+    fCost: 0
+  - position: {x: 16, y: 8, z: 0}
+    tileData: {fileID: 11400000, guid: 5f58f728ba40093429417d735cc67866, type: 2}
+    name: EnemySpawner
+    UnitPlanted: 0
+    gCost: 0
+    hCost: 0
+    fCost: 0
+  path: []
+  Base:
+    position: {x: 9, y: 5, z: 0}
+    tileData: {fileID: 11400000, guid: c3696b88b22f79044a86d0ec80c585c4, type: 2}
+    name: PlayerTree
+    UnitPlanted: 0
+    gCost: 0
+    hCost: 0
+    fCost: 0
+--- !u!19719996 &4167482784233962278
 TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2111,48 +2168,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &5549238065717766075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386481638060603650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b937b01e7b4493b135a94abb076c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameGrid:
-    length: 0
-    width: 0
-  listTileData:
-  - {fileID: 11400000, guid: 1cfb9b716bf6a5c41b86d78f64d339b9, type: 2}
-  - {fileID: 11400000, guid: f383eea9187349e489505fa979220eff, type: 2}
-  - {fileID: 11400000, guid: ffa2fc010b85d534aa34c2ade88b6a4c, type: 2}
-  - {fileID: 11400000, guid: 5f58f728ba40093429417d735cc67866, type: 2}
-  - {fileID: 11400000, guid: c3696b88b22f79044a86d0ec80c585c4, type: 2}
-  ruleTile: {fileID: 11400000, guid: 9d3dc65f59812774c8d8b8b9cf53beaa, type: 2}
-  unitList: {fileID: 11400000, guid: ef912bba33c11da4f9774288280f921e, type: 2}
-  gridEvents: {fileID: 11400000, guid: bd3c183e0c0249c48a76e797d4aa6adc, type: 2}
-  gridDatashow:
-    position: {x: 0, y: 0, z: 0}
-    tileData: {fileID: 0}
-    name: 
-    UnitPlanted: 0
-    gCost: 0
-    hCost: 0
-    fCost: 0
-  enemySpawner: []
-  path: []
-  Base:
-    position: {x: 0, y: 0, z: 0}
-    tileData: {fileID: 0}
-    name: 
-    UnitPlanted: 0
-    gCost: 0
-    hCost: 0
-    fCost: 0
 --- !u!1 &4109703402910356702
 GameObject:
   m_ObjectHideFlags: 0
