@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using GameFlow;
 using Grid;
 using UI;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class GameInitatore : MonoBehaviour
     public GameObject tileMap;
     public GameObject controllers;
     public Camera mainCamera;
+    public GameObject Tutorial;
   
 
     private GridManager grid;
@@ -28,6 +30,8 @@ public class GameInitatore : MonoBehaviour
     private GameObject _tileMap;
     private GameObject _controllers;
     private GameController _GameController;
+    private GameTutorial _GameTutorial;
+    private GameObject TutorialObject;
 
 
     private void Awake()
@@ -71,7 +75,8 @@ public class GameInitatore : MonoBehaviour
         pointerScript = _Pointer.GetComponent<Pointer>();
         pointerScript.SetUpPointer(mainCamera);
         _Pointer.SetActive(false);
-
+        TutorialObject = Instantiate(Tutorial);
+        _GameTutorial = Tutorial.GetComponent<GameTutorial>();
         Debug.Log("finding GameController");
         _controllers = Instantiate(controllers);
         _GameController = _controllers.GetComponent<GameController>();
@@ -92,6 +97,8 @@ public class GameInitatore : MonoBehaviour
         _GameController.StartGame();
         _Pointer.SetActive(true);
         _LevelUI.SetActive(true);
+
+        _GameTutorial.StartTutorial();
         yield return null;
   
         

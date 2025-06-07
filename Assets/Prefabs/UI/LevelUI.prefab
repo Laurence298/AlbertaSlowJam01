@@ -2150,6 +2150,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82123360794096247, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2910341973088486942, guid: 04e388d58f4e4444e916502953fdb636, type: 3}
     - target: {fileID: 1518270865137123737, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: m_Name
       value: unit List
@@ -2239,10 +2243,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3535465476206808938}
     - target: {fileID: 3443613231679355474, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
-      propertyPath: descriptionText
-      value: Slows enemys
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443613231679355474, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: descriptionTextUI
       value: 
       objectReference: {fileID: 7603310312301047898}
@@ -2275,10 +2275,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3535465476206808938}
     - target: {fileID: 5898791684189989249, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
-      propertyPath: descriptionText
-      value: Generates Currency
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898791684189989249, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: descriptionTextUI
       value: 
       objectReference: {fileID: 7603310312301047898}
@@ -2298,13 +2294,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008741836011336812, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4100972555721093218, guid: b691f2e2aa9ae404686c315516ba2cf6, type: 3}
     - target: {fileID: 6421484962722071538, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: description
       value: 
       objectReference: {fileID: 3535465476206808938}
     - target: {fileID: 6421484962722071538, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: descriptionText
-      value: Shoots enemies
+      value: basic unit
       objectReference: {fileID: 0}
     - target: {fileID: 6421484962722071538, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: descriptionTextUI
@@ -2400,7 +2400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874868737597813744, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7874868737597813744, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2419,13 +2419,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3535465476206808938}
     - target: {fileID: 9046253782996515913, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
-      propertyPath: descriptionText
-      value: Increased Range and power
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046253782996515913, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
       propertyPath: descriptionTextUI
       value: 
       objectReference: {fileID: 7603310312301047898}
+    - target: {fileID: 9166337032973033892, guid: 152ae597784b0fd4f8ff8720df1dc874, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1689044008236683924, guid: 8b24eadc9122a12428d027adf757ef60, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,4 +1,6 @@
 using System;
+using AYellowpaper.SerializedCollections;
+using GameFlow;
 using Grid;
 using Grid.Tests;
 using UI;
@@ -36,8 +38,10 @@ public class Pointer : MonoBehaviour
     
     [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
     private bool isHoldingInput;
+    
 
     private GameObject unit;
+    public Tutorail tutorail;
 
     public void SetUpPointer(Camera camera)
     {
@@ -52,11 +56,14 @@ public class Pointer : MonoBehaviour
     private void SoUIEventsOnOnPaintSelectedSoUI()
     {
         PointerState = PointerStates.Greening;
-        
+        tutorail.TutorialOneDone = true;
+
     }
 
     private void SoUIEventsOnOnClickUnitSoUI(UnitType arg0)
     {
+        tutorail.TutorialThreeDone = true;
+
         avaliableUnits = arg0;
         PointerState = PointerStates.UnitPlacement;
     }
@@ -83,10 +90,12 @@ public class Pointer : MonoBehaviour
                 
                 if(!moneyCounter.CanPurchaseUnit(avaliableUnits))
                     return;
-                
+
                 unit =   GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
                 if(unit != null)
                      moneyCounter.PurchaseUnit(avaliableUnits);
+                tutorail.TutorialFourDone = true;
+
                 PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:
@@ -94,6 +103,7 @@ public class Pointer : MonoBehaviour
                     return;
                 if(!moneyCounter.CanPurchaseGrass())
                     return;
+                tutorail.TutorialTwoDone = true;
 
                 GridManager.Instance.PlaceTileAtPointer( );
                 moneyCounter.PurchaseGrass();

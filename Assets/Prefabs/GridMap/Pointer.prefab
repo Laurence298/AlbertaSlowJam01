@@ -82,6 +82,7 @@ MonoBehaviour:
   Greenery: {fileID: 11400000, guid: 1cfb9b716bf6a5c41b86d78f64d339b9, type: 2}
   moneyCounter: {fileID: 11400000, guid: 2836fcbe9f5480047b51e4cacb71e603, type: 2}
   soUIEvents: {fileID: 11400000, guid: 6ca8978e79d32d44a8d72b80100d0cd3, type: 2}
+  tutorail: {fileID: 11400000, guid: b288208cbd5262e4d8e63d1bb3ef5cdb, type: 2}
 --- !u!1 &9036798333541669505
 GameObject:
   m_ObjectHideFlags: 0
