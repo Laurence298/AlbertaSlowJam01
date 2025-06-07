@@ -20,8 +20,6 @@ public class PlayerHealthTest : MonoBehaviour
 
     public void TakeDamage(float damage) 
     {
-
-
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         playerHealth -= damage;
 

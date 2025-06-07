@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class RangedTreeType : Abstract_Tree
 {
@@ -10,7 +11,6 @@ public class RangedTreeType : Abstract_Tree
     public GameObject projectile;
     public List<RaycastHit2D> enemyDetect;
     [SerializeField] LayerMask targetLayers;
-
     //public GameObject targetObj;
 
     public List<GameObject> enemiesInRange;
@@ -19,6 +19,7 @@ public class RangedTreeType : Abstract_Tree
     private void Start()
     {
         //IDK put something here
+        
     }
 
     private void Update()
