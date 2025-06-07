@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3ab30c1b4715d44813ad889a1ff85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   pointerPng: {fileID: 9036798333541669505}
   detectionLayer:
     serializedVersion: 2
@@ -332,7 +333,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 215
-  m_Sprite: {fileID: -6217414193810812720, guid: b057cd3e5542e1746bd8830f9e0b753a, type: 3}
+  m_Sprite: {fileID: 6554736390298987251, guid: 46a035db4dc052345ae43986bcae6bd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

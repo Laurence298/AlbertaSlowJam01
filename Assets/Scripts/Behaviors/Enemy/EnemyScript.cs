@@ -22,6 +22,7 @@ public class EnemyScript : Abstract_Enemy
 
     public override void Death()
     {
+        // 
         Destroy(this.gameObject);
     }
 
