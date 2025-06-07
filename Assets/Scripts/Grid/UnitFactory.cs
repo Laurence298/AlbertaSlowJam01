@@ -34,7 +34,7 @@ namespace Grid
             gameGrid.returnGrid(tilePosition.x, tilePosition.y).UnitPlanted = true;
             
             
-            return GameObject.Instantiate(unitList.units[type].unit, new Vector3(worldPosition.x + .5f , worldPosition.y + .5f ,0), Quaternion.identity);
+            return GameObject.Instantiate(unitList.units[type].unit, new Vector3(worldPosition.x + .5f , worldPosition.y + .25f ,0), Quaternion.identity);
         }
     }
 
