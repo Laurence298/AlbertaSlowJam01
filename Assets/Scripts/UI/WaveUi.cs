@@ -24,7 +24,7 @@ namespace UI
 
         private void SoUIEventsOnOnWaveChanged(int currentWave, int maxwave)
         {
-            text.text = currentWave.ToString() + " / " + maxwave.ToString();
+            text.text = (currentWave + 1).ToString() + " / " + maxwave.ToString();
         }
     }
 }

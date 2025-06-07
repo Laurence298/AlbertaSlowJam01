@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990c5c3fe6384c05ad124bf13e4367c4, type: 3}
+  m_Name: WavePattern1
+  m_EditorClassIdentifier: 
+  waves:
+  - waveName: Wave 1
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 2
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 3
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 4
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 5
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 6
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 7
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 8
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 9
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []
+  - waveName: Wave 10
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
+    spawnedCount: 0
+    waveEnemys:
+      enemySpawnList: []
+      spawnedEnemies: []

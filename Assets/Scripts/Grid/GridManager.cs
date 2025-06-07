@@ -21,7 +21,7 @@ namespace Grid
         public UnitFactory unitFactory;
         
         // the game grid
-        Tilemap tilemap;
+        public Tilemap tilemap;
         public TilemapCollider2D collider;
         public GameGrid gameGrid;
 
@@ -92,7 +92,7 @@ namespace Grid
             enemySpawner = new List<GridData>();
             
             // set up the grid
-            gameGrid = new GameGrid(10, 17,transform.position);
+            gameGrid = new GameGrid(18, 30,transform.position);
             Debug.Log(collider.bounds.max +" "+collider.bounds.min);
             // setup the grid data
             AssignGridData();
@@ -115,7 +115,6 @@ namespace Grid
            
 
             gridposition = tilemap.WorldToCell(position);
-            Debug.Log(gridposition);
             gridDatashow = gameGrid.returnGrid(gridposition.x, gridposition.y);
         }
      
@@ -164,9 +163,10 @@ namespace Grid
             Vector3 spawnPosition = tilemap.CellToWorld(gridposition);
             unitFactory.SpawnUnit(unitType, spawnPosition);
         }
-        public List<GridData> FindPath(GridData from, GridData to)
+        public List<GridData> FindPath(Vector3 objectPosition, GridData to)
         {
-            
+            Vector3Int gridPosition = tilemap.WorldToCell(objectPosition);
+            GridData from = gameGrid.returnGrid(gridPosition.x, gridPosition.y);
             
             List<GridData> openPath = new List<GridData>{from};
             List<GridData> closedPath = new List<GridData>();

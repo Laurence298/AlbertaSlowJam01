@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Behaviors;
 using GameFlow;
 using UI;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour
         uiEvents.RaiseTimerChanged(countdown);
         uiEvents.OnStartPressed += UiEventsOnOnStartPressed;
         gameCoroutine = StartCoroutine(Preaping());
+        waveController.ReadyUp();
 
     }
 
@@ -42,6 +44,8 @@ public class GameController : MonoBehaviour
 
     public IEnumerator Preaping()
     {
+        waveController.StartWave(false);
+
         gameState = GameState.Preaping;
 
         while (countdown > 0)
@@ -58,8 +62,9 @@ public class GameController : MonoBehaviour
     public IEnumerator Defending()
     {
         gameState = GameState.Defending;
+        waveController.StartWave(true);
 
-        yield return new WaitUntil(() => !waveController.AreEnemiesAlive());
+        yield return new WaitUntil(() => waveController.AreAllEnemiesDead());
         countdown = timeUntilRoundStart;
         waveController.NextWave();
         
