@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class EnemyScript : Abstract_Enemy
 {
-    public Vector2 targetPoint, pointA, pointB;
-    //public List<Vector2> movePoints;
-    public LinkedList<Vector2> movePoints;
     public float attackRange, attackDamage, attackTime, attackDelay;
     public RaycastHit2D attackHit;
     public LayerMask hitLayerMask;
@@ -30,40 +27,24 @@ public class EnemyScript : Abstract_Enemy
 
     public override void Move()
     {
-        transform.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-    }
-
-    public override void Move(Vector2 pointA, Vector2 pointB)
-    {
-
-        if(Vector2.Distance(transform.position, targetPoint) <= 0.1f) 
-        {
-            targetPoint = (Vector2.Distance(transform.position, pointA) > Vector2.Distance(transform.position, pointB)) ? pointA : pointB;
-        }
-
-        transform.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-        //transform.GetComponent<Rigidbody2D>().linearVelocity = (targetPoint - (Vector2)transform.position) * moveSpeed;
+        //transform.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        targetPoint = GameObject.Find("PlayerHealthTest").transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Move(pointA, pointB);
         Attack();
 
+        //Keeps it from rotating when moving across the spline
+        transform.rotation = Quaternion.identity;
 
-        //General Movement?
-        if (Vector2.Distance(transform.position, targetPoint) >= 1f)
-        {
-            Move();
-        }
-
+        //If health is reduced to zero or less, kill
         if (health <= 0) 
         {
             Death();
