@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7072179657343647205}
   - component: {fileID: 8705833298481226590}
   - component: {fileID: 2647801026206345574}
+  - component: {fileID: -3442129442132452873}
   m_Layer: 2
   m_Name: SniperTreeUnit
   m_TagString: Untagged
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -226688069, guid: df93cf96686755a43b734302d2c13aa5, type: 3}
-  m_Color: {r: 0.17591108, g: 0.7132075, b: 0, a: 1}
+  m_Sprite: {fileID: -4100972555721093218, guid: b691f2e2aa9ae404686c315516ba2cf6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,8 +149,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    pivot: {x: 0.49999997, y: -0.016393442}
+    oldSize: {x: 1.4375, y: 1.90625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -157,3 +158,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3442129442132452873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242391694630468166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf64a799ace97478e57dd3c1d3ad69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.6
+  squashFactor: 0.94
+  stretchFactor: 1.06
+  vibrato: 2

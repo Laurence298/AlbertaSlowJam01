@@ -23,12 +23,13 @@ public class EnemyScript : Abstract_Enemy
         if (attackHit.collider && Time.time > attackTime) 
         {
             attackTime = Time.time + attackDelay;
-            attackHit.collider.GetComponent<PlayerHealthTest>().TakeDamage(attackDamage);
+            attackHit.collider.GetComponent<Players>().TakeDamage(attackDamage);
         }
     }
 
     public override void Death()
     {
+        // 
         Destroy(this.gameObject);
     }
 

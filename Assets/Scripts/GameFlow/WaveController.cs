@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Behaviors;
 using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.Splines;
 
 namespace GameFlow
 {
@@ -13,21 +15,59 @@ namespace GameFlow
         public int CurrentWaves;
         
         [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
-        public List<EnemySpawner> EnemySpawners;
+        public EnemySpawner[] EnemySpawners;
+        public SplineContainer left;
+        public SplineContainer right;
+        public WaveDataSo[] wavedata;
 
+        public bool waveInProgress;
 
         private void Start()
         {
-            CurrentWaves = 0;
-            EnemySpawners = (transform.GetComponentsInChildren<EnemySpawner>().ToList());
-            soUIEvents.RaiseWaveChanged(CurrentWaves, MaxWaves);
+          
         }
 
-        public void StartWave()
+       public void ReadyUp()
         {
-            
+            CurrentWaves = 0;
+            EnemySpawners = FindObjectsByType<EnemySpawner>(FindObjectsSortMode.None);
+            soUIEvents.RaiseWaveChanged(CurrentWaves, MaxWaves);
+
+            if (EnemySpawners.Length == 2)
+            {
+                var spawnerA = EnemySpawners[0];
+                var spawnerB = EnemySpawners[1];
+
+                if (spawnerA.transform.position.x < spawnerB.transform.position.x)
+                {
+                    spawnerA.InitROute( left);
+                    spawnerB.InitROute(right);
+                }
+                else
+                {
+                    spawnerA.InitROute(right);
+                    spawnerB.InitROute(left);
+                }
+            }
+
+            for (int i = 0; i < wavedata.Length; i++)
+            {
+                EnemySpawners[i].InitSpawner(this, wavedata[i]);
+            }
+
+         
+        }
+        
+
+        public void StartWave(bool start)
+        {
+            waveInProgress = start;
         }
 
+        public bool IsWaveInProgress()
+        {
+            return waveInProgress;
+        }
         public void GetSpawnPoints()
         {
             
@@ -40,13 +80,19 @@ namespace GameFlow
 
         }
 
-        public bool AreEnemiesAlive()
+        public bool AreAllEnemiesDead()
         {
-            return false;
+            foreach (EnemySpawner spawner in EnemySpawners)
+            {
+                if(!spawner.AreAllEnemiesDead())
+                    return false;
+            }
+            
+            return true;
         }
         public bool LevelCompleted()
         {
-            if (CurrentWaves >= MaxWaves && !AreEnemiesAlive())
+            if (CurrentWaves >= MaxWaves - 1 && AreAllEnemiesDead())
             {
                 return true;
             }

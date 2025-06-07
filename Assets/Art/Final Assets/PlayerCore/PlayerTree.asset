@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: PlayerTree
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -5494431050740921464, guid: 3a3609bdd22cd6245bf161ca8f04f92c, type: 3}
+  m_Sprite: {fileID: 8737071357824405356, guid: eded096004fb2f044be9ae29762ad273, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,6 +31,6 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 0}
+  m_InstancedGameObject: {fileID: 8265607955460090156, guid: 828e5a7df0438b94aace8dc18e5d50c8, type: 3}
   m_Flags: 1
   m_ColliderType: 1

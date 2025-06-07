@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Behaviors;
 using GameFlow;
 using UI;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
     public Coroutine gameCoroutine;
     public SoUIEvents uiEvents;
 
+    Players players;
 
 
     public void StartGame()
@@ -27,7 +29,14 @@ public class GameController : MonoBehaviour
         uiEvents.RaiseTimerChanged(countdown);
         uiEvents.OnStartPressed += UiEventsOnOnStartPressed;
         gameCoroutine = StartCoroutine(Preaping());
+        waveController.ReadyUp();
+        uiEvents.RaiseGameStateChanged(gameState);
 
+    }
+
+    public void GetPlayerHealth(Players player)
+    {
+        this.players = player;
     }
 
     private void UiEventsOnOnStartPressed()
@@ -42,7 +51,10 @@ public class GameController : MonoBehaviour
 
     public IEnumerator Preaping()
     {
+        waveController.StartWave(false);
+
         gameState = GameState.Preaping;
+        uiEvents.RaiseGameStateChanged(gameState);
 
         while (countdown > 0)
         {
@@ -58,21 +70,38 @@ public class GameController : MonoBehaviour
     public IEnumerator Defending()
     {
         gameState = GameState.Defending;
+        uiEvents.RaiseGameStateChanged(gameState);
 
-        yield return new WaitUntil(() => !waveController.AreEnemiesAlive());
-        countdown = timeUntilRoundStart;
-        waveController.NextWave();
+        waveController.StartWave(true);
         
-        if(!waveController.LevelCompleted())
-            gameCoroutine = StartCoroutine(Preaping());
-        else if(waveController.LevelCompleted())
-            gameCoroutine = StartCoroutine(LevelComplete());
+        
+
+        yield return new WaitUntil(() => waveController.AreAllEnemiesDead() || players.currentHealth < 0);
+
+        
+        if(players.currentHealth <= 0)
+            gameCoroutine = StartCoroutine(GameOver());
+        else
+        {
+            if (!waveController.LevelCompleted())
+            {
+                countdown = timeUntilRoundStart;
+                waveController.NextWave();
+                gameCoroutine = StartCoroutine(Preaping());
+
+            }
+            else if(waveController.LevelCompleted())
+                gameCoroutine = StartCoroutine(LevelComplete());
+        }
+      
 
     }
 
     public IEnumerator GameOver()
     {
         gameState = GameState.GameOver;
+        uiEvents.RaiseGameStateChanged(gameState);
+
         yield return null;
 
     }
@@ -80,6 +109,8 @@ public class GameController : MonoBehaviour
     public IEnumerator LevelComplete()
     {
         gameState = GameState.LevelComplete;
+        uiEvents.RaiseGameStateChanged(gameState);
+
         yield return null;
 
         

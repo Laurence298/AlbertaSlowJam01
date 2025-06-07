@@ -19,6 +19,9 @@ public class GameInitatore : MonoBehaviour
 
     private GridManager grid;
     private Pointer pointerScript;
+    private Players playerScript;
+    private Healthbar healthbarScript;
+    
     private GameObject _MainMenu;
     private GameObject _LevelUI;
     private GameObject _Pointer;
@@ -47,7 +50,6 @@ public class GameInitatore : MonoBehaviour
     {
         _MainMenu = Instantiate(GameMainMenu);
         _LevelUI = Instantiate(LevelUI);
-        _LevelUI.SetActive(false);
        
         
         _tileMap = Instantiate(tileMap);
@@ -55,15 +57,26 @@ public class GameInitatore : MonoBehaviour
         grid.Init();
         yield return new WaitUntil(() =>grid.collider != null);
         grid.SetUpGrid();
+
+        playerScript = FindFirstObjectByType<Players>();
+        healthbarScript = FindObjectOfType<Healthbar>();
+        Debug.Log("finding Players");
         
+        yield return new WaitUntil(() =>playerScript != null && healthbarScript != null);
+        playerScript.SetHealthBar(healthbarScript);
+        
+        
+        Debug.Log("finding pointer");
         _Pointer = Instantiate(pointer);
         pointerScript = _Pointer.GetComponent<Pointer>();
         pointerScript.SetUpPointer(mainCamera);
         _Pointer.SetActive(false);
 
+        Debug.Log("finding GameController");
         _controllers = Instantiate(controllers);
         _GameController = _controllers.GetComponent<GameController>();
-        
+        _GameController.GetPlayerHealth(playerScript);
+
         yield return new WaitUntil(()=> _GameController != null );
     }
 

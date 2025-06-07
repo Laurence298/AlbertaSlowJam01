@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6315417234363503584}
   - component: {fileID: 729798900595791499}
   - component: {fileID: -5676499217413434836}
+  - component: {fileID: 866477566631857176}
+  - component: {fileID: 3444063485050059712}
+  - component: {fileID: -1456221930128755755}
   m_Layer: 3
   m_Name: BasicEnemyUnit
   m_TagString: Untagged
@@ -80,8 +83,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e60718119cec31e4190849292fcde068, type: 3}
-  m_Color: {r: 0.735849, g: 0.26032823, b: 0, a: 1}
+  m_Sprite: {fileID: -6583241482669752419, guid: e7fc9e62f78f1464eb24d41038b6ff24, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -128,8 +131,8 @@ BoxCollider2D:
   m_Offset: {x: -0, y: -0.0018982105}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -176,11 +179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904a84632a1d66f41a449f244f5e6429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
   moveSpeed: 3
   maxHealth: 100
-  defense: 15
-  attackRange: 0.5
+  status: 0
+  attackRange: 0.7
   attackDamage: 1
   attackTime: 0
   attackDelay: 2
@@ -205,8 +208,59 @@ MonoBehaviour:
   m_Method: 1
   m_Duration: 1
   m_MaxSpeed: 10
-  m_EasingMode: 2
+  m_EasingMode: 0
   m_AlignmentMode: 0
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &866477566631857176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683530764662706455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd70bb4de0170d4baa3661561ab64d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyCounter: {fileID: 11400000, guid: 2836fcbe9f5480047b51e4cacb71e603, type: 2}
+  Coin: 2
+--- !u!114 &3444063485050059712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683530764662706455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8883fcf3182d6714b9bd30e8075e5f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: -1456221930128755755}
+  SplineAnimate: {fileID: -5676499217413434836}
+  isComplete: 0
+--- !u!95 &-1456221930128755755
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683530764662706455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 772c968f8b5582a4c94c348098166a1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

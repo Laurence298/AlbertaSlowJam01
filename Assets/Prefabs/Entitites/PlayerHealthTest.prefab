@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7167849325384721652}
   - component: {fileID: 6002193588792626696}
-  - component: {fileID: 3804367299810439758}
   - component: {fileID: 3437887757284832131}
   - component: {fileID: 4332117986279248340}
+  - component: {fileID: -38462024425313317}
+  - component: {fileID: 2878737075167072675}
   m_Layer: 7
   m_Name: PlayerHealthTest
   m_TagString: Untagged
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_SortingOrder: 246
+  m_Sprite: {fileID: 1926837003200385188, guid: a1e288784833c0f449afcc474c5eded3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,20 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3804367299810439758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8265607955460090156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc996e96ab00516498bfb0a2be6a42fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 500
-  maxPlayerHealth: 500
 --- !u!61 &3437887757284832131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,8 +128,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    pivot: {x: 0.5438998, y: 0.042693444}
+    oldSize: {x: 1.375, y: 1.9375}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -177,3 +164,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &-38462024425313317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265607955460090156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ae268a5c5b109418c4ca9a8e9131ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 25
+  currentHealth: 0
+  healthbar: {fileID: 0}
+--- !u!114 &2878737075167072675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265607955460090156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf64a799ace97478e57dd3c1d3ad69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.4
+  squashFactor: 0.98
+  stretchFactor: 1.02
+  vibrato: 2
