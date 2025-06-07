@@ -14,6 +14,9 @@ namespace UI
         public Button button;
         public TextMeshProUGUI costText;
         public MoneyCounter moneyCounter;
+        public GameObject description;
+        public TextMeshProUGUI descriptionTextUI;
+        public string descriptionText;
 
         private void Awake()
         {
@@ -26,6 +29,8 @@ namespace UI
             costText.text = moneyCounter.unitperCost[unitType].ToString();
             moneyCounter.OnCoinsChanged += MoneyCounterOnOnCoinsChanged;
             AddHoverEvents();
+            description.SetActive(false);
+
         }
 
         private void OnDisable()
@@ -71,11 +76,15 @@ namespace UI
         private void OnHoverEnter()
         {
             Debug.Log($"Hovered on button for {unitType}");
+            description.SetActive(true);
+            descriptionTextUI.text = descriptionText;
             // Play sound, change color, animate, etc.
         }
 
         private void OnHoverExit()
         {
+            description.SetActive(false);
+
             Debug.Log($"Exited hover on button for {unitType}");
         }
 
