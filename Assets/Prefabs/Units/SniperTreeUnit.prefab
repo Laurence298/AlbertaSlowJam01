@@ -105,9 +105,8 @@ MonoBehaviour:
   attackFrequency: 1.5
   attackDelay: 0
   attackDmg: 45
-  projectileSpeed: 50
+  projectileSpeed: 100
   bulletType: {fileID: 6182925658260525055, guid: a405d75e9ce35334fb2f214f7c50f3d8, type: 3}
-  projectile: {fileID: 0}
   targetLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -150,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

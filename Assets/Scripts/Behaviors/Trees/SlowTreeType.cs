@@ -1,14 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class RangedTreeType : Abstract_Tree
+public class SlowTreeType : Abstract_Tree
 {
-    public float projectileSpeed;
+    public float projectileSpeed, effectDuration;
     [SerializeField] GameObject bulletType;
-    private BasicProjectile projectile;
+    private SlowingProjectile projectile;
     [SerializeField] LayerMask targetLayers;
 
     public List<GameObject> enemiesInRange;
@@ -17,7 +16,7 @@ public class RangedTreeType : Abstract_Tree
     private void Start()
     {
         //IDK put something here
-        
+
     }
 
     private void Update()
@@ -42,11 +41,12 @@ public class RangedTreeType : Abstract_Tree
         //Todo: Make it so the projectile knows that it's coming from this script
         //NEED: The projectile to fly at the direction it's heading
         //NEED: Delay the attack, can't fire every frame.
-        projectile = Instantiate(bulletType, transform.position, transform.rotation, transform).GetComponent<BasicProjectile>();
+        projectile = Instantiate(bulletType, transform.position, transform.rotation, transform).GetComponent<SlowingProjectile>();
         projectile.targetPos = targetObj.transform.position;
         projectile.damage = attackDmg;
         projectile.projectileSpeed = projectileSpeed;
         projectile.projectileRange = attackRange;
+        projectile.effectDuration = effectDuration;
     }
 
     private void OnDrawGizmos()
@@ -54,6 +54,4 @@ public class RangedTreeType : Abstract_Tree
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
-
 }
