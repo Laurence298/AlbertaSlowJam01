@@ -159,10 +159,10 @@ namespace Grid
             tileFactory.PaintTile(gridposition, tileTypeMap,ruleTile);
         }
 
-        public void PlaceUnitAtPointer(UnitType unitType)
+        public GameObject PlaceUnitAtPointer(UnitType unitType)
         {
             Vector3 spawnPosition = tilemap.CellToWorld(gridposition);
-            unitFactory.SpawnUnit(unitType, spawnPosition);
+          return  unitFactory.SpawnUnit(unitType, spawnPosition);
         }
         public List<GridData> FindPath(Vector3 objectPosition, GridData to)
         {

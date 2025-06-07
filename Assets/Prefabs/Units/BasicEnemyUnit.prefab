@@ -180,8 +180,8 @@ MonoBehaviour:
   health: 100
   moveSpeed: 3
   maxHealth: 100
-  defense: 15
-  attackRange: 0.5
+  status: 0
+  attackRange: 0.7
   attackDamage: 1
   attackTime: 0
   attackDelay: 2

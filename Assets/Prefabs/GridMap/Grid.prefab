@@ -1101,7 +1101,7 @@ Tilemap:
       m_TileSpriteIndex: 33
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
+      m_TileObjectToInstantiateIndex: 1
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 16, y: 3, z: 0}
@@ -5540,7 +5540,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1306142342276354982, guid: bfa8bba1e585e464794e4f6bc6c2fe7e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -5494431050740921464, guid: 3a3609bdd22cd6245bf161ca8f04f92c, type: 3}
+    m_Data: {fileID: 8737071357824405356, guid: eded096004fb2f044be9ae29762ad273, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 2511756289854438665, guid: 3df8c58c796652e4aba08046361b8d08, type: 3}
   - m_RefCount: 5
@@ -5698,6 +5698,8 @@ Tilemap:
   m_TileObjectToInstantiateArray:
   - m_RefCount: 2
     m_Data: {fileID: 3550516109552773568, guid: c2cb1b2618a34d4429adc36acbfd8462, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 8265607955460090156, guid: 828e5a7df0438b94aace8dc18e5d50c8, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -15, y: -21, z: 0}
@@ -5785,7 +5787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b937b01e7b4493b135a94abb076c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 2366416701135918658}
   collider: {fileID: 4167482784233962278}
   gameGrid:
     length: 18

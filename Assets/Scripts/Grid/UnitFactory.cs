@@ -42,5 +42,7 @@ namespace Grid
     {
         BaseTree,
         LongRange,
+        Slower,
+        MoneyPrinter
     }
 }

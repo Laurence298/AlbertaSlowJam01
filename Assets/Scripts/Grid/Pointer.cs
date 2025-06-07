@@ -37,6 +37,7 @@ public class Pointer : MonoBehaviour
     [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
     private bool isHoldingInput;
 
+    private GameObject unit;
 
     public void SetUpPointer(Camera camera)
     {
@@ -81,8 +82,9 @@ public class Pointer : MonoBehaviour
                 if(!moneyCounter.CanPurchaseUnit(avaliableUnits))
                     return;
                 
-                GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
-                moneyCounter.PurchaseUnit(avaliableUnits);
+                unit =   GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
+                if(unit != null)
+                     moneyCounter.PurchaseUnit(avaliableUnits);
                 PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:

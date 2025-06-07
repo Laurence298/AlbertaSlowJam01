@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public Coroutine gameCoroutine;
     public SoUIEvents uiEvents;
 
+    Players players;
 
 
     public void StartGame()
@@ -30,6 +31,11 @@ public class GameController : MonoBehaviour
         gameCoroutine = StartCoroutine(Preaping());
         waveController.ReadyUp();
 
+    }
+
+    public void GetPlayerHealth(Players player)
+    {
+        this.players = player;
     }
 
     private void UiEventsOnOnStartPressed()
@@ -63,19 +69,27 @@ public class GameController : MonoBehaviour
     {
         gameState = GameState.Defending;
         waveController.StartWave(true);
+        
+        
 
-        yield return new WaitUntil(() => waveController.AreAllEnemiesDead());
+        yield return new WaitUntil(() => waveController.AreAllEnemiesDead() || players.currentHealth < 0);
 
-
-        if (!waveController.LevelCompleted())
+        
+        if(players.currentHealth <= 0)
+            gameCoroutine = StartCoroutine(GameOver());
+        else
         {
-            countdown = timeUntilRoundStart;
-            waveController.NextWave();
-            gameCoroutine = StartCoroutine(Preaping());
+            if (!waveController.LevelCompleted())
+            {
+                countdown = timeUntilRoundStart;
+                waveController.NextWave();
+                gameCoroutine = StartCoroutine(Preaping());
 
+            }
+            else if(waveController.LevelCompleted())
+                gameCoroutine = StartCoroutine(LevelComplete());
         }
-        else if(waveController.LevelCompleted())
-            gameCoroutine = StartCoroutine(LevelComplete());
+      
 
     }
 
