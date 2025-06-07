@@ -78,6 +78,8 @@ public class Pointer : MonoBehaviour
             case PointerStates.Navigation:
                 break;
             case PointerStates.UnitPlacement:
+                if(OverUi())
+                    return;
                 
                 if(!moneyCounter.CanPurchaseUnit(avaliableUnits))
                     return;
@@ -88,7 +90,8 @@ public class Pointer : MonoBehaviour
                 PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:
-                
+                if(OverUi())
+                    return;
                 if(!moneyCounter.CanPurchaseGrass())
                     return;
 
