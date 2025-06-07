@@ -6,13 +6,13 @@ public class enemycoinsAllocator : MonoBehaviour
 {
     private int _killCoins;
 
-    private ScoreController _coins;
+    private MoneyCounter _coins;
 
     public int ItemAmount = 10; // This is the item price
 
     private void Awake()
     {
-        _coins = FindObjectOfType<ScoreController>();
+        _coins = FindObjectOfType<MoneyCounter>();
     }
 
     public void AllocatedCoins()

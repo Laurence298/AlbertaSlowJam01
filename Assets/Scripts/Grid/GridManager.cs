@@ -36,8 +36,8 @@ namespace Grid
         // scriptable object
         public SOGridEvents gridEvents;
 
-        
-        
+
+        public GameObject Highlight;
         // current grid
       [SerializeField]  private GridData gridDatashow;
       
@@ -115,6 +115,7 @@ namespace Grid
            
 
             gridposition = tilemap.WorldToCell(position);
+            Highlight.transform.position = new Vector3(gridposition.x + 0.5f, gridposition.y + 0.5f);
             gridDatashow = gameGrid.returnGrid(gridposition.x, gridposition.y);
         }
      

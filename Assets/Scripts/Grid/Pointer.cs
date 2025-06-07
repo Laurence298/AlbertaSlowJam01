@@ -31,7 +31,7 @@ public class Pointer : MonoBehaviour
     
     // green tile
     public TileData Greenery;
-
+    public MoneyCounter moneyCounter;
 
     
     [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
@@ -42,6 +42,7 @@ public class Pointer : MonoBehaviour
     {
         cam = camera;
         ClickAction.Enable();
+        moneyCounter.StartingAMoung();
         ClickAction.started += ClickActionOnperformed;
         soUIEvents.OnClickUnitUI += SoUIEventsOnOnClickUnitSoUI;
         soUIEvents.OnPaintSelectedUI += SoUIEventsOnOnPaintSelectedSoUI;
@@ -77,11 +78,20 @@ public class Pointer : MonoBehaviour
                 break;
             case PointerStates.UnitPlacement:
                 
+                if(!moneyCounter.CanPurchaseUnit(avaliableUnits))
+                    return;
+                
                 GridManager.Instance.PlaceUnitAtPointer(avaliableUnits);
+                moneyCounter.PurchaseUnit(avaliableUnits);
                 PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:
-                    GridManager.Instance.PlaceTileAtPointer( );
+                
+                if(!moneyCounter.CanPurchaseGrass())
+                    return;
+
+                GridManager.Instance.PlaceTileAtPointer( );
+                moneyCounter.PurchaseGrass();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

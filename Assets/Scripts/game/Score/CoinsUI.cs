@@ -10,8 +10,8 @@ public class CoinsUI : MonoBehaviour
         _coinText = GetComponent<TMP_Text>();
     }
 
-    public void UpdateScore(ScoreController Coins) 
+    public void UpdateScore(MoneyCounter Coins) 
     {
-        _coinText.text = $"Score: {Coins.CoinScorer}";
+        _coinText.text = $"Score: {Coins.CoinCount}";
     }
 }

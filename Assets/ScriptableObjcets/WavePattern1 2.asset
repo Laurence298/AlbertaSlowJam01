@@ -14,83 +14,93 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave 1
-    spawnFreq: 1
-    timeDelay: 5
-    maxSpawnNum: 10
-    spawnedCount: 0
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 1
+    spawnedCount: 1
     waveEnemys:
       enemySpawnList:
-      - {fileID: 2891428495708965398, guid: 3efddca376abafb47bc664e6ef45fd27, type: 3}
-      spawnedEnemies: []
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
+      spawnedEnemies:
+      - {fileID: 0}
   - waveName: Wave 2
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 3
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 4
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 5
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 6
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 7
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 8
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 9
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []
   - waveName: Wave 10
     spawnFreq: 0
     timeDelay: 0
-    maxSpawnNum: 0
+    maxSpawnNum: 1
     spawnedCount: 0
     waveEnemys:
-      enemySpawnList: []
+      enemySpawnList:
+      - {fileID: 3683530764662706455, guid: 5a07487bc7ec4ae44a7d63d63536d9d1, type: 3}
       spawnedEnemies: []

@@ -80,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
     private void EnemySpawn() 
     {
 
-        if (sowaveData.waves[waveController.CurrentWaves].waveEnemys.spawnedEnemies.Count < sowaveData.waves[waveController.CurrentWaves].maxSpawnNum)
+        if (sowaveData.waves[waveController.CurrentWaves].waveEnemys.spawnedEnemies.Count < sowaveData.waves[waveController.CurrentWaves].maxSpawnNum && sowaveData.waves[waveController.CurrentWaves].maxSpawnNum > 0)
         {
             enemy = GameObject.Instantiate(sowaveData.waves[waveController.CurrentWaves].waveEnemys.enemySpawnList[0], transform.position, transform.rotation);
             enemy.gameObject.GetComponent<SplineAnimate>().Container = spline;
