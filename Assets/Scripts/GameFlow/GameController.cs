@@ -18,13 +18,16 @@ public class GameController : MonoBehaviour
     public Coroutine gameCoroutine;
     public SoUIEvents uiEvents;
 
-    private void Start()
+
+
+    public void StartGame()
     {
         gameState = GameState.Preaping;
         countdown = timeUntilRoundStart;
         uiEvents.RaiseTimerChanged(countdown);
         uiEvents.OnStartPressed += UiEventsOnOnStartPressed;
         gameCoroutine = StartCoroutine(Preaping());
+
     }
 
     private void UiEventsOnOnStartPressed()

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Unit ui
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 414400805808141174}
   - component: {fileID: 8916688594151267394}
   - component: {fileID: 2852887422531007929}
-  - component: {fileID: 6061256877859927049}
+  - component: {fileID: 2681480792887469177}
   m_Layer: 5
   m_Name: UnitIcon
   m_TagString: Untagged
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6061256877859927049}
+      - m_Target: {fileID: 2681480792887469177}
         m_TargetAssemblyTypeName: UI.UnitUI, Assembly-CSharp
         m_MethodName: ReturnUnitType
         m_Mode: 1
@@ -270,7 +270,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6061256877859927049
+--- !u!114 &2681480792887469177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

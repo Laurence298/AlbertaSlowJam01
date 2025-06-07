@@ -12,6 +12,7 @@ using TileData = Grid.TileData;
 
 public class Pointer : MonoBehaviour
 {
+    public Camera cam;
     public GameObject pointerPng;
     [SerializeField]
     private LayerMask detectionLayer;
@@ -35,13 +36,15 @@ public class Pointer : MonoBehaviour
     
     [FormerlySerializedAs("uiEvents")] public SoUIEvents soUIEvents;
     private bool isHoldingInput;
-    private void Awake()
+
+
+    public void SetUpPointer(Camera camera)
     {
+        cam = camera;
         ClickAction.Enable();
         ClickAction.started += ClickActionOnperformed;
         soUIEvents.OnClickUnitUI += SoUIEventsOnOnClickUnitSoUI;
         soUIEvents.OnPaintSelectedUI += SoUIEventsOnOnPaintSelectedSoUI;
-        
     }
 
     private void SoUIEventsOnOnPaintSelectedSoUI()
@@ -78,8 +81,7 @@ public class Pointer : MonoBehaviour
                 PointerState = PointerStates.Navigation;
                 break;
             case PointerStates.Greening:
-                if(!OverUi())
-                    GridManager.Instance.PlaceTileAtPointer(Greenery.tiles[Random.Range(0, Greenery.tiles.Length)] );
+                    GridManager.Instance.PlaceTileAtPointer( );
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -94,7 +96,7 @@ public class Pointer : MonoBehaviour
     public void GetSelectedMapPosition()
     {
         Vector2 screenPosition = Mouse.current.position.ReadValue();
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        Vector3 worldPosition = cam.ScreenToWorldPoint(screenPosition);
         transform.position = new Vector3(worldPosition.x, worldPosition.y);
         Vector2 origin = new Vector2(worldPosition.x, worldPosition.y);
 
