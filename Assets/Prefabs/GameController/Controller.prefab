@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223589819057544782}
-  - component: {fileID: 8525506550083955969}
+  - component: {fileID: 8643097983856473707}
   m_Layer: 0
   m_Name: right  wavespawners
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3307083200634027494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8525506550083955969
+--- !u!114 &8643097983856473707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,17 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4367688670234546149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eafdbcfab164fec8a2fe7903a9272eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd32d252947e5a459403720a61949be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestinationRoot: []
-  waveData:
-  - waveName: Wave 1
-    waveData:
-    - enemy: {fileID: 0}
-      count: 0
-  - waveName: Wave 2
-    waveData: []
+  spawnFreq: 0
+  timeDelay: 0
+  maxSpawnNum: 0
+  spawnedCount: 0
+  enemySpawnList: []
+  spawnedEnemies: []
 --- !u!1 &4626882146638581098
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4334305052289848539}
-  - component: {fileID: 8238939929630285067}
+  - component: {fileID: 6925590348215725243}
   m_Layer: 0
   m_Name: left wavespawners (
   m_TagString: Untagged
@@ -84,7 +82,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3307083200634027494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8238939929630285067
+--- !u!114 &6925590348215725243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,17 +91,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4626882146638581098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eafdbcfab164fec8a2fe7903a9272eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd32d252947e5a459403720a61949be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestinationRoot: []
-  waveData:
-  - waveName: Wave 1
-    waveData:
-    - enemy: {fileID: 0}
-      count: 0
-  - waveName: Wave 2
-    waveData: []
+  spawnFreq: 0
+  timeDelay: 0
+  maxSpawnNum: 0
+  spawnedCount: 0
+  enemySpawnList: []
+  spawnedEnemies: []
 --- !u!1 &4834502873943504711
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,8 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95b796d5a715f744abd5cda248cb769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preapingCountdown: 0.5
-  countdown: 0
+  timeUntilRoundStart: 20
   waveController: {fileID: 3354070936637098309}
   gameState: 0
   uiEvents: {fileID: 11400000, guid: 6ca8978e79d32d44a8d72b80100d0cd3, type: 2}
@@ -171,4 +166,4 @@ MonoBehaviour:
   MaxWaves: 10
   CurrentWaves: 0
   soUIEvents: {fileID: 11400000, guid: 6ca8978e79d32d44a8d72b80100d0cd3, type: 2}
-  spawners: []
+  EnemySpawners: []

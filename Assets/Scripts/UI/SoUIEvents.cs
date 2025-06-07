@@ -13,6 +13,9 @@ namespace UI
         public event UnityAction<int,int> OnWaveChanged;
         public event UnityAction OnStartPressed;
         public event UnityAction<float> OnTimerChanged;
+        
+        public event UnityAction OnGameStart;
+
 
         public void RaiseClickUnit(UnitType unitType)
         {
@@ -36,6 +39,10 @@ namespace UI
         public void RaiseTimerChanged(float timer )
         {
             OnTimerChanged?.Invoke(timer);
+        }
+        public void RaiseGameStart( )
+        {
+            OnGameStart?.Invoke();
         }
 
     }

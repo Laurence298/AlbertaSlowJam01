@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Grid.Tests;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -21,7 +22,7 @@ namespace Grid
         
         // the game grid
         Tilemap tilemap;
-        TilemapCollider2D collider;
+        public TilemapCollider2D collider;
         public GameGrid gameGrid;
 
         // tile dictionaru containes thier data
@@ -71,23 +72,36 @@ namespace Grid
             {
                 Destroy(gameObject);
             }
-            gridEvents.OnMousPointerPositionChanged += GridEventsOnOnMousPointerPositionChanged;
-            gridEvents.OnpointerTypeChanged += GridEventsOnOnpointerTypeChanged;
+
+        }
+
+        public void Init()
+        {
+         
+            
+        }
+        
+
+        public void SetUpGrid()
+        {
+          
         }
         private void Start()
         {
             tilemap = GetComponent<Tilemap>();
-            collider = GetComponent<TilemapCollider2D>();
             enemySpawner = new List<GridData>();
             
             // set up the grid
             gameGrid = new GameGrid(10, 17,transform.position);
-            Debug.Log(collider.bounds.max + collider.bounds.min);
+            Debug.Log(collider.bounds.max +" "+collider.bounds.min);
             // setup the grid data
             AssignGridData();
             
             tileFactory = new TileFactory(tilemap,gameGrid);
             unitFactory = new UnitFactory(unitList, gameGrid,tilemap);
+            
+            gridEvents.OnMousPointerPositionChanged += GridEventsOnOnMousPointerPositionChanged;
+            gridEvents.OnpointerTypeChanged += GridEventsOnOnpointerTypeChanged;
         }
         private void GridEventsOnOnpointerTypeChanged(PointerStates pointerType)
         {
@@ -95,10 +109,13 @@ namespace Grid
         }
         private void GridEventsOnOnMousPointerPositionChanged(Vector3 position)
         {
+
             if(!gameGrid.IsGridReady())
                 return;
-            
+           
+
             gridposition = tilemap.WorldToCell(position);
+            Debug.Log(gridposition);
             gridDatashow = gameGrid.returnGrid(gridposition.x, gridposition.y);
         }
      
@@ -121,7 +138,6 @@ namespace Grid
                 {
                     TileBase tile = tilemap.GetTile(new Vector3Int(x, y, 0));
                     GridData currentData =  gameGrid.returnGrid(x, y);
-                   Debug.Log(x + " " + y + " " );
                     currentData.tileData = tileTypeMap[tile];
                     currentData.name = tile.name;
                     if (currentData.tileData.tileType == tileType.EnemySpawner)
