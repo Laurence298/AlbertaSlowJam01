@@ -76,7 +76,7 @@ public class GameInitatore : MonoBehaviour
         pointerScript.SetUpPointer(mainCamera);
         _Pointer.SetActive(false);
         TutorialObject = Instantiate(Tutorial);
-        _GameTutorial = Tutorial.GetComponent<GameTutorial>();
+        //_GameTutorial = Tutorial.GetComponent<GameTutorial>();
         Debug.Log("finding GameController");
         _controllers = Instantiate(controllers);
         _GameController = _controllers.GetComponent<GameController>();
@@ -98,7 +98,7 @@ public class GameInitatore : MonoBehaviour
         _Pointer.SetActive(true);
         _LevelUI.SetActive(true);
 
-        _GameTutorial.StartTutorial();
+        //_GameTutorial.StartTutorial();
         yield return null;
   
         

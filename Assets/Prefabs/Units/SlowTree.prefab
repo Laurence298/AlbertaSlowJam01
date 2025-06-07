@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.3
-  squashFactor: 0.8
-  stretchFactor: 1.2
+  squashFactor: 0.95
+  stretchFactor: 1.05
   vibrato: 2

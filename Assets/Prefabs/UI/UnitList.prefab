@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_ChildAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2791399306678583068, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2910341973088486942, guid: 04e388d58f4e4444e916502953fdb636, type: 3}
     - target: {fileID: 2858157583458499853, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_Name
       value: UnitUi (3)
@@ -217,6 +221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7874868737597813744}
     m_Modifications:
+    - target: {fileID: 600355195337619257, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
+      propertyPath: descriptionText
+      value: basic unit
+      objectReference: {fileID: 0}
     - target: {fileID: 2858157583458499853, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_Name
       value: UnitIcon (1)
@@ -341,12 +349,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 600355195337619257, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: descriptionText
-      value: generates moeny 3 times a round
+      value: Generates Money
       objectReference: {fileID: 0}
     - target: {fileID: 2232203092119027687, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_ChildAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2791399306678583068, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1689044008236683924, guid: 8b24eadc9122a12428d027adf757ef60, type: 3}
     - target: {fileID: 2858157583458499853, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_Name
       value: UnitUi (4)
@@ -475,12 +487,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 600355195337619257, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: descriptionText
-      value: LongRangeFire
+      value: 'Sniper '
       objectReference: {fileID: 0}
     - target: {fileID: 2232203092119027687, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_ChildAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2791399306678583068, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4100972555721093218, guid: b691f2e2aa9ae404686c315516ba2cf6, type: 3}
     - target: {fileID: 2858157583458499853, guid: 9ee6f8b57ae6399408fcd0a7d94dc520, type: 3}
       propertyPath: m_Name
       value: UnitUi (2)

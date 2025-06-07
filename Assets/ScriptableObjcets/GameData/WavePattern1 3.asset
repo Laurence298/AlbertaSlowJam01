@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 990c5c3fe6384c05ad124bf13e4367c4, type: 3}
-  m_Name: WavePattern1 2
+  m_Name: WavePattern1 3
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave 1
-    spawnFreq: 1
-    timeDelay: 2
-    maxSpawnNum: 4
+    spawnFreq: 0
+    timeDelay: 0
+    maxSpawnNum: 0
     spawnedCount: 0
     waveEnemys:
       enemySpawnList:
@@ -26,7 +26,7 @@ MonoBehaviour:
   - waveName: Wave 2
     spawnFreq: 1
     timeDelay: 2
-    maxSpawnNum: 4
+    maxSpawnNum: 0
     spawnedCount: 0
     waveEnemys:
       enemySpawnList:
@@ -36,7 +36,7 @@ MonoBehaviour:
   - waveName: Wave 3
     spawnFreq: 1
     timeDelay: 2
-    maxSpawnNum: 10
+    maxSpawnNum: 0
     spawnedCount: 0
     waveEnemys:
       enemySpawnList:

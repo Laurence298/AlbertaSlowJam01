@@ -714,6 +714,6 @@ MonoBehaviour:
   left: {fileID: 1567656124613811227}
   right: {fileID: 1325617425440604800}
   wavedata:
-  - {fileID: 11400000, guid: ecf53a82bece8724ea9ead9789e6b855, type: 2}
+  - {fileID: 11400000, guid: 17df633ec4311c442a95b2f19b660c37, type: 2}
   - {fileID: 11400000, guid: 111cab7e791f86e4196345b6742a14bf, type: 2}
   waveInProgress: 0
