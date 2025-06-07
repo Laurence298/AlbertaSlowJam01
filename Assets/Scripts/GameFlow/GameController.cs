@@ -65,11 +65,15 @@ public class GameController : MonoBehaviour
         waveController.StartWave(true);
 
         yield return new WaitUntil(() => waveController.AreAllEnemiesDead());
-        countdown = timeUntilRoundStart;
-        waveController.NextWave();
-        
-        if(!waveController.LevelCompleted())
+
+
+        if (!waveController.LevelCompleted())
+        {
+            countdown = timeUntilRoundStart;
+            waveController.NextWave();
             gameCoroutine = StartCoroutine(Preaping());
+
+        }
         else if(waveController.LevelCompleted())
             gameCoroutine = StartCoroutine(LevelComplete());
 

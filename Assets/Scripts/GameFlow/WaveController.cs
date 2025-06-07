@@ -92,7 +92,7 @@ namespace GameFlow
         }
         public bool LevelCompleted()
         {
-            if (CurrentWaves >= MaxWaves && !AreAllEnemiesDead())
+            if (CurrentWaves >= MaxWaves - 1 && AreAllEnemiesDead())
             {
                 return true;
             }
