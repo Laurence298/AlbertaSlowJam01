@@ -37,7 +37,7 @@ namespace UI
         private void MoneyCounterOnOnCoinsChanged(int arg0)
         {
 
-            if (moneyCounter.unitperCost[unitType] < arg0)
+            if (moneyCounter.unitperCost[unitType] <= arg0)
             {
                 costText.color = Color.white;
             }

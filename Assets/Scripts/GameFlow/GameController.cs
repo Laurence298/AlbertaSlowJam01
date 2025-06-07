@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
         uiEvents.OnStartPressed += UiEventsOnOnStartPressed;
         gameCoroutine = StartCoroutine(Preaping());
         waveController.ReadyUp();
+        uiEvents.RaiseGameStateChanged(gameState);
 
     }
 
@@ -53,6 +54,7 @@ public class GameController : MonoBehaviour
         waveController.StartWave(false);
 
         gameState = GameState.Preaping;
+        uiEvents.RaiseGameStateChanged(gameState);
 
         while (countdown > 0)
         {
@@ -68,6 +70,8 @@ public class GameController : MonoBehaviour
     public IEnumerator Defending()
     {
         gameState = GameState.Defending;
+        uiEvents.RaiseGameStateChanged(gameState);
+
         waveController.StartWave(true);
         
         
@@ -96,6 +100,8 @@ public class GameController : MonoBehaviour
     public IEnumerator GameOver()
     {
         gameState = GameState.GameOver;
+        uiEvents.RaiseGameStateChanged(gameState);
+
         yield return null;
 
     }
@@ -103,6 +109,8 @@ public class GameController : MonoBehaviour
     public IEnumerator LevelComplete()
     {
         gameState = GameState.LevelComplete;
+        uiEvents.RaiseGameStateChanged(gameState);
+
         yield return null;
 
         

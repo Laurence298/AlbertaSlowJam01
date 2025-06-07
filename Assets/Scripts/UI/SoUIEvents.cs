@@ -15,7 +15,8 @@ namespace UI
         public event UnityAction<float> OnTimerChanged;
         
         public event UnityAction OnGameStart;
-
+        public GameState GameState;
+        public event UnityAction<GameState> OnGameStateChanged;
 
         public void RaiseClickUnit(UnitType unitType)
         {
@@ -43,6 +44,10 @@ namespace UI
         public void RaiseGameStart( )
         {
             OnGameStart?.Invoke();
+        }
+        public void RaiseGameStateChanged(GameState state )
+        {
+            OnGameStateChanged?.Invoke(state);
         }
 
     }

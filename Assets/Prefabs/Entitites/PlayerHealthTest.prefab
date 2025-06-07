@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3437887757284832131}
   - component: {fileID: 4332117986279248340}
   - component: {fileID: -38462024425313317}
+  - component: {fileID: 2878737075167072675}
   m_Layer: 7
   m_Name: PlayerHealthTest
   m_TagString: Untagged
@@ -178,3 +179,19 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   healthbar: {fileID: 0}
+--- !u!114 &2878737075167072675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265607955460090156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf64a799ace97478e57dd3c1d3ad69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.4
+  squashFactor: 0.98
+  stretchFactor: 1.02
+  vibrato: 2

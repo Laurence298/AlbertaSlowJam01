@@ -79,7 +79,7 @@ MonoBehaviour:
           z: -0.5
           w: 0.5
     - Position:
-        x: 2.1562824
+        x: 2.18
         y: 0
         z: 0
       TangentIn:
@@ -97,7 +97,7 @@ MonoBehaviour:
           z: -0.17563494
           w: 0.68494695
     - Position:
-        x: 2.1731284
+        x: 2.18
         y: 3.9588008
         z: 0
       TangentIn:
@@ -115,8 +115,8 @@ MonoBehaviour:
           z: -0.16304006
           w: 0.68805367
     - Position:
-        x: 4.1609516
-        y: 3.9924922
+        x: 4.15
+        y: 3.958801
         z: 0
       TangentIn:
         x: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
           z: -0.108226635
           w: 0.69877535
     - Position:
-        x: 4.089553
-        y: 9.997179
+        x: 4.15
+        y: 9.947844
         z: 0
       TangentIn:
         x: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
           z: -0.20408884
           w: 0.6770139
     - Position:
-        x: 8.11039
+        x: 8.184393
         y: 9.947844
         z: 0
       TangentIn:
@@ -170,7 +170,7 @@ MonoBehaviour:
           w: -0.27761653
     - Position:
         x: 8.184393
-        y: 6.0750136
+        y: 5.951675
         z: 0
       TangentIn:
         x: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
           w: -0.16073866
     - Position:
         x: 11.119787
-        y: 0.13008952
+        y: 0
         z: 0
       TangentIn:
         x: 0
@@ -223,8 +223,8 @@ MonoBehaviour:
           z: 0.6875088
           w: -0.16532275
     - Position:
-        x: 14.153915
-        y: 0.05608654
+        x: 14.43
+        y: 0
         z: 0
       TangentIn:
         x: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
           w: -0.4955429
     - Position:
         x: -4.1688423
-        y: -0.07400322
+        y: 0
         z: 0
       TangentIn:
         x: 0
@@ -369,8 +369,8 @@ MonoBehaviour:
           z: 0.37386367
           w: 0.60018826
     - Position:
-        x: -4.218178
-        y: 2.0720873
+        x: -4.168842
+        y: 1.99
         z: 0
       TangentIn:
         x: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
           w: 0.6921702
     - Position:
         x: -5.1062164
-        y: 2.0720873
+        y: 1.99
         z: 0
       TangentIn:
         x: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
           w: 0.58129686
     - Position:
         x: -10.163095
-        y: 3.9715042
+        y: 3.922169
         z: 0
       TangentIn:
         x: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
           z: -0.61009425
           w: -0.35747024
     - Position:
-        x: -10.212431
-        y: 1.0607138
+        x: -10.1631
+        y: 1
         z: 0
       TangentIn:
         x: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
           w: -0.26523474
     - Position:
         x: -13.12322
-        y: 0.9127083
+        y: 1
         z: 0
       TangentIn:
         x: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
           w: -0.36798158
     - Position:
         x: -9.201056
-        y: -1.110044
+        y: -1.011374
         z: 0
       TangentIn:
         x: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
           z: 0.6549393
           w: -0.2665605
     - Position:
-        x: -9.176388
+        x: -9.201056
         y: -5.0568776
         z: 0
       TangentIn:
@@ -549,8 +549,8 @@ MonoBehaviour:
           z: -0.6478893
           w: -0.28326574
     - Position:
-        x: -10.163095
-        y: -5.9695826
+        x: -10.08909
+        y: -6
         z: 0
       TangentIn:
         x: 0
@@ -567,8 +567,8 @@ MonoBehaviour:
           z: -0.5691407
           w: -0.41961756
     - Position:
-        x: -13.1972275
-        y: -6.018922
+        x: -13.14
+        y: -6
         z: 0
       TangentIn:
         x: 0
@@ -585,8 +585,8 @@ MonoBehaviour:
           z: 0.42882633
           w: 0.5622348
     - Position:
-        x: -13.221893
-        y: -5.1308846
+        x: -13.14
+        y: -4.92
         z: 0
       TangentIn:
         x: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95b796d5a715f744abd5cda248cb769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUntilRoundStart: 1
+  timeUntilRoundStart: 20
   waveController: {fileID: 3354070936637098309}
   gameState: 0
   uiEvents: {fileID: 11400000, guid: 6ca8978e79d32d44a8d72b80100d0cd3, type: 2}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2287563686354946844}
   - component: {fileID: 8932627280289340548}
   - component: {fileID: 4776719988916624756}
+  - component: {fileID: -1872236460939224799}
   m_Layer: 2
   m_Name: SlowTree
   m_TagString: Untagged
@@ -111,3 +112,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   enemiesInRange: []
+--- !u!114 &-1872236460939224799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748137232324594279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf64a799ace97478e57dd3c1d3ad69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.3
+  squashFactor: 0.8
+  stretchFactor: 1.2
+  vibrato: 2

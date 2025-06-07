@@ -76,7 +76,6 @@ public class GameInitatore : MonoBehaviour
         _controllers = Instantiate(controllers);
         _GameController = _controllers.GetComponent<GameController>();
         _GameController.GetPlayerHealth(playerScript);
-        _LevelUI.SetActive(false);
 
         yield return new WaitUntil(()=> _GameController != null );
     }

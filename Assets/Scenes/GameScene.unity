@@ -132,6 +132,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 81612206193763721, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
+      propertyPath: m_CropFrame
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 81612206193763721, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 768
+      objectReference: {fileID: 0}
     - target: {fileID: 2173601492835549338, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -171,6 +179,18 @@ PrefabInstance:
     - target: {fileID: 2173601492835549338, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132630689721714871, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
+      propertyPath: orthographic size
+      value: 7.714286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132630689721714871, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132630689721714871, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6408645683871227907, guid: 6a4f0f3bce4eb6d44a490c514585df72, type: 3}
       propertyPath: m_Name
