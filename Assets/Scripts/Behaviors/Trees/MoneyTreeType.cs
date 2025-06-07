@@ -32,8 +32,12 @@ public class MoneyTree : Abstract_Tree
 
     private void SoUIEventsOnOnGameStateChanged(GameState arg0)
     {
-        if(arg0 == GameState.Defending)
+        if (arg0 == GameState.Defending)
+        {
             canGenerate = true;
+            incTotal = 0;
+
+        }
         else
         {
             canGenerate = false;

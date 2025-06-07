@@ -1071,8 +1071,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -23.3823, y: 0}
+  m_SizeDelta: {x: 53.2354, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7282019123473978598
 CanvasRenderer:
@@ -1747,8 +1747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.8781, y: -0.0848}
-  m_SizeDelta: {x: 18.9608, y: 13.2226}
+  m_AnchoredPosition: {x: -15.8781, y: 0.4071}
+  m_SizeDelta: {x: 18.9608, y: 14.2063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1511365309169861406
 CanvasRenderer:
@@ -1805,11 +1805,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.98
+  m_fontSize: 17
   m_fontSizeBase: 17.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 19.98
+  m_fontSizeMin: 17
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -1988,8 +1988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.878298, y: -0.084556}
-  m_SizeDelta: {x: 18.5669, y: 13.222}
+  m_AnchoredPosition: {x: 31.878298, y: 0.40737}
+  m_SizeDelta: {x: 18.5669, y: 14.206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1345003040777972813
 CanvasRenderer:
@@ -2046,14 +2046,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 17
   m_fontSizeBase: 17.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 22
+  m_fontSizeMin: 17
   m_fontSizeMax: 71.7
   m_fontStyle: 1
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 27.8
+  m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
