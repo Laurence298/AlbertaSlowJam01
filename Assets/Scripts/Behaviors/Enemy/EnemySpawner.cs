@@ -17,12 +17,12 @@ public class EnemySpawner : MonoBehaviour
     public int currentWave;
     public SplineContainer spline;
     public List<Vector3> paths;
-    public List<BezierKnot> bezierKnot; 
-    
+    public List<BezierKnot> bezierKnot;
+
     private float timeDelay;
     private WaveController waveController;
 
-    public enum EnemyType 
+    public enum EnemyType
     {
         basic,
         light,
@@ -50,38 +50,39 @@ public class EnemySpawner : MonoBehaviour
 
     public void InitROute(SplineContainer spline)
     {
-        
-       this.spline = spline;
-      
+
+        this.spline = spline;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(waveController == null)
-            return;
-        
-        if(!waveController.IsWaveInProgress())
+        if (waveController == null)
             return;
 
-        if (Time.time > timeDelay) 
+        if (!waveController.IsWaveInProgress())
+            return;
+
+        if (Time.time > timeDelay)
         {
 
-            timeDelay = Time.time +  sowaveData.waves[currentWave].spawnFreq;
-         EnemySpawn();
+            timeDelay = Time.time + sowaveData.waves[currentWave].spawnFreq;
+            EnemySpawn();
         }
-       
 
 
-      //  ClearSpawnedList();
+
+        //  ClearSpawnedList();
 
     }
 
-    private void EnemySpawn() 
+    private void EnemySpawn()
     {
 
         if (sowaveData.waves[waveController.CurrentWaves].waveEnemys.spawnedEnemies.Count < sowaveData.waves[waveController.CurrentWaves].maxSpawnNum && sowaveData.waves[waveController.CurrentWaves].maxSpawnNum > 0)
         {
+
             enemy = GameObject.Instantiate(sowaveData.waves[waveController.CurrentWaves].waveEnemys.enemySpawnList[0], transform.position, transform.rotation);
             enemy.gameObject.GetComponent<SplineAnimate>().Container = spline;
             enemy.gameObject.GetComponent<SplineAnimate>().MaxSpeed = enemy.GetComponent<EnemyScript>().moveSpeed;
@@ -89,9 +90,10 @@ public class EnemySpawner : MonoBehaviour
             enemy.gameObject.name = "Badguy #" + sowaveData.waves[waveController.CurrentWaves].spawnedCount;
             sowaveData.waves[waveController.CurrentWaves].spawnedCount++;
             sowaveData.waves[waveController.CurrentWaves].waveEnemys.spawnedEnemies.Add(enemy);
+
         }
     }
-    
+
     public bool AreAllEnemiesDead()
     {
         if (sowaveData.waves[waveController.CurrentWaves].waveEnemys.enemySpawnList == null || sowaveData.waves[waveController.CurrentWaves].maxSpawnNum == 0)
@@ -101,15 +103,15 @@ public class EnemySpawner : MonoBehaviour
         {
             if (obj != null) return false;
         }
-        
-        if(sowaveData.waves[waveController.CurrentWaves].maxSpawnNum == sowaveData.waves[waveController.CurrentWaves].spawnedCount)
+
+        if (sowaveData.waves[waveController.CurrentWaves].maxSpawnNum == sowaveData.waves[waveController.CurrentWaves].spawnedCount)
             return true;
         else
             return false;
     }
 
 
-   
+
 }
 
 [System.Serializable]

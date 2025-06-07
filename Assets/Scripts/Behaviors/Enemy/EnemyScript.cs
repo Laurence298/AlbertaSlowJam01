@@ -2,12 +2,19 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class EnemyScript : Abstract_Enemy
 {
     public float attackRange, attackDamage, attackTime, attackDelay;
     public RaycastHit2D attackHit;
     public LayerMask hitLayerMask;
+
+
+    //USED FOR DEBUFF Countdowns
+    private float endTime, timeUntilZero;
+
+
 
     public override void Attack()
     {
@@ -26,9 +33,20 @@ public class EnemyScript : Abstract_Enemy
         Destroy(this.gameObject);
     }
 
-    public override void Move()
+
+    public override void ApplyDebuff(StatusEffects debuff, float duration)
     {
-        //transform.GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+
+        status = debuff;
+        endTime = Time.time + duration;
+    }
+
+
+
+    //Currently Never called
+    public override void RemoveDebuff(StatusEffects debuff)
+    {
+        status = StatusEffects.Nothing;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,11 +55,27 @@ public class EnemyScript : Abstract_Enemy
 
     }
 
+    private void statusRun() 
+    {
+        timeUntilZero = endTime - Time.time;
+        if (timeUntilZero > 0f)
+        {
+            status = StatusEffects.Stun;
+            this.GetComponent<SplineAnimate>().Pause();
+        }
+        else
+        {
+            status = StatusEffects.Nothing;
+            this.GetComponent<SplineAnimate>().Play();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        statusRun();
 
+        Attack();
         //Keeps it from rotating when moving across the spline
         transform.rotation = Quaternion.identity;
 
@@ -51,6 +85,7 @@ public class EnemyScript : Abstract_Enemy
             Death();
         }
     }
+
 
     private void OnDrawGizmos()
     {

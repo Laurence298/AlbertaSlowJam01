@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5676499217413434836}
   - component: {fileID: 866477566631857176}
   m_Layer: 3
-  m_Name: EnemyUnit 1
+  m_Name: BasicEnemyUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Method: 1
   m_Duration: 1
   m_MaxSpeed: 10
-  m_EasingMode: 0
+  m_EasingMode: 2
   m_AlignmentMode: 0
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
