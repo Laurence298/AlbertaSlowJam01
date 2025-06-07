@@ -46,11 +46,11 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnedEnemies.Count < maxSpawnNum)
         {
-            enemy = GameObject.Instantiate(enemySpawnList.First(), transform.position, transform.rotation);
+            enemy = GameObject.Instantiate(enemySpawnList.Last(), transform.position, transform.rotation);
             enemy.gameObject.GetComponent<SplineAnimate>().Container = spline;
             enemy.gameObject.GetComponent<SplineAnimate>().MaxSpeed = enemy.GetComponent<EnemyScript>().moveSpeed;
             enemy.gameObject.GetComponent<SplineAnimate>().Play();
-            enemy.gameObject.name = "Badguy #" + spawnedCount;
+            enemy.gameObject.name += " " + spawnedCount;
             spawnedCount++;
             spawnedEnemies.Add(enemy);
         }
